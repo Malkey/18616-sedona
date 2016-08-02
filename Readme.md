@@ -1,6 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Анастасия Подворная](https://up.htmlacademy.ru/htmlcss/14/user/18616).
+* Наставник: [Артем Альтигин](https://htmlacademy.ru/profile/id82397).
 
 ---
 
