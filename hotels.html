@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Седона</title>
+  </head>
+  <body>
+    <div class="wrapper"> <!-- обертка-центровщик -->
+      <header classs="main-header">
+        <!-- Не знаю, куда будет правильнее поместить ссылку с логотипом -->
+        <a href="/" class="logo"><img src="#" alt="City of Sedona" width="" height=""></a>
+
+        <nav class="main-menu">
+          <ul>
+            <li><a href="">Информация</a></li>
+            <li><a href="">Фото и видео</a></li>
+            <li><a href="">Карта штата</a></li>
+            <li><a href="">Гостиницы</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <form class="hotels-form" action="#" method="post">
+
+          <h2>Инфраструктура:</h2>
+
+          <input type="checkbox" name="pool" id="pool-field" checked>
+          <label for="pool-field">Бассейн</label>
+
+          <input type="checkbox" name="parking" id="parking-field">
+          <label for="parking-field">Парковка</label>
+
+          <input type="checkbox" name="wifi" id="wifi-field">
+          <label for="wifi-field">Wi-Fi</label>
+
+          <h2>Тип жилья:</h2>
+
+          <input type="checkbox" name="hotel" id="hotel-field" checked>
+          <label for="hotel-field">Гостиница</label>
+
+          <input type="checkbox" name="motel" id="motel-field" checked>
+          <label for="motel-field">Мотель</label>
+
+          <input type="checkbox" name="apartments" id="apartments-field" checked>
+          <label for="apartments-field">Апартаменты</label>
+
+          <h2>Стоимость в сутки (Р):</h2>
+          <!--
+          А как создавать двойной ползунок?
+          input[type="range"] только одно значение возвращает же?
+          Или тут чисто JS?
+          -->
+
+          <button class="hotels-btn" type="submit">Показать</button>
+          <!--
+          В Specification.md написано:
+          "Фильтр: верстать с помощью формы, кнопка «Показать» отвечает за отправку формы, при выключенном JavaScript должен осуществляться переход на отдельную страницу."
+          Так кнопка или ссылка должна быть? Как это правильно сделать?
+          -->
+
+        </form>
+
+        <section class="sorting">
+          <p>Найдено: 3</p>
+
+          <p>Сортировка:</p>
+          <ul>
+            <li>
+              <button class="sorting-btn" type="button">По цене</button>
+            </li>
+            <li>
+              <button class="sorting-btn" type="button">По типу</button>
+            </li>
+            <li>
+              <button class="sorting-btn" type="button">По рейтингу</button>
+            </li>
+          </ul>
+
+          <button class="arrow arrow-up" type="button">По возрастанию</a>
+          <button class="arrow arrow-down" type="button">По убыванию</a>
+          <!-- Стрелки будут реализованы с помощью псевдоэлементов, размер шрифта обнулится -->
+        </section>
+
+        <section class="hotels-list">
+          <article class="hotels-list-item">
+            <figure>
+              <img src="#" alt="Amara Resort & Spa" width="" height="">
+            </figure>
+
+            <h1>Amara Resort & Spa</h1>
+
+            <p class="hotel-status">Гостиница</p>
+            <p class="hotel-price">От 3500 р.</p>
+
+            <a class="hotel-btn hotel-btn-readmore" href="#">Подробнее</a>
+            <a class="hotel-btn hotel-btn-booking" href="#">Забронировать</a>
+
+            <section class="hotel-rating-block">
+              <!--
+              Не знаю, как будет правильнее сверстать звезды.
+              Или в данном случае это будут просто картинки?
+              -->
+              <div class="hotel-stars"></div>
+              <div class="hotel-rating">Рейтинг: 8,5</div>
+            </section>
+          </article>
+
+          <article class="hotels-list-item">
+            <figure>
+              <img src="#" alt="Desert Quail Inn" width="" height="">
+            </figure>
+
+            <h1>Desert Quail Inn</h1>
+
+            <p class="hotel-status">Мотель</p>
+            <p class="hotel-price">От 2000 р.</p>
+
+            <a class="hotel-btn hotel-btn-readmore" href="#">Подробнее</a>
+            <a class="hotel-btn hotel-btn-booking" href="#">Забронировать</a>
+
+            <section class="hotel-rating-block">
+              <div class="hotel-stars"></div>
+              <div class="hotel-rating">Рейтинг: 8,9</div>
+            </section>
+          </article>
+
+          <article class="hotels-list-item">
+            <figure>
+              <img src="#" alt="Villas at Poco Diablo" width="" height="">
+            </figure>
+
+            <h1>Villas at Poco Diablo</h1>
+
+            <p class="hotel-status">Апартаменты</p>
+            <p class="hotel-price">От 4000 р.</p>
+
+            <a class="hotel-btn hotel-btn-readmore" href="#">Подробнее</a>
+            <a class="hotel-btn hotel-btn-booking" href="#">Забронировать</a>
+
+            <section class="hotel-rating-block">
+              <div class="hotel-stars"></div>
+              <div class="hotel-rating">Рейтинг: 9,2</div>
+            </section>
+          </article>
+        </section>
+      </main>
+
+      <footer class="main-footer">
+        <section class="footer-hashtag">
+          #visitsedona
+        </section>
+        <section class="footer-social">
+          <a href="#" class="social-btn social-btn-twitter"></a>
+          <a href="#" class="social-btn social-btn-facebook"></a>
+          <a href="#" class="social-btn social-btn-youtube"></a>
+        </section>
+        <section class="footer-copyright">
+          <a href="#"><img src="#" alt="HTML Academy" width="" height=""></a>
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>

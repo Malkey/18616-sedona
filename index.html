@@ -5,8 +5,150 @@
     <title>HTML Academy: Седона</title>
   </head>
   <body>
+    <div class="wrapper"> <!-- обертка-центровщик -->
+      <header classs="main-header">
+        <!-- Не знаю, куда будет правильнее поместить ссылку с логотипом -->
+        <a href="/" class="logo"><img src="#" alt="City of Sedona" width="" height=""></a>
 
-    <p>Репозиторий создан для обучения на интенсивном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">Базовый HTML и CSS</a>».</p>
+        <nav class="main-menu">
+          <ul>
+            <li><a href="">Информация</a></li>
+            <li><a href="">Фото и видео</a></li>
+            <li><a href="">Карта штата</a></li>
+            <li><a href="">Гостиницы</a></li>
+          </ul>
+        </nav>
+      </header>
 
+      <main>
+        <section class="intro">
+          <!-- крупное фото - в background -->
+
+          <!-- Полагаю, это всё картинка. Или все-таки текст? -->
+          <img src="#" alt="Welcome to Sedona" width="" height="">
+
+          <!-- Белая маска. Её правильно делать картинкой или нужен блок с background-image ? -->
+          <img class="mask" src="#" alt="" width="100%" height="">
+        </section>
+
+        <div class="reasons-intro">
+          <h1>Седона — небольшой городок в Аризоне, заслуживающий большего!</h1>
+          <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+        </div>
+
+        <div class="reasons reason-1">
+          <section class="reasons-item">
+            <h2>Настоящий городок</h2>
+            <p>— №1 —</p>
+            <p>Седона — не аттракцион для туристов, там течет своя жизнь</p>
+          </section>
+          <figure>
+            <img src="#" alt="Седона — настоящий городок" width="" height="">
+          </figure>
+        </div>
+
+        <div class="advices">
+          <section class="advices-item">
+            <img src="" alt="Жилье" width="" height="">
+            <h2>Жилье</h2>
+            <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+          </section>
+          <section class="advices-item">
+            <img src="" alt="Еда" width="" height="">
+            <h2>Еда</h2>
+            <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+          </section>
+          <section class="advices-item">
+            <img src="" alt="Сувениры" width="" height="">
+            <h2>Сувениры</h2>
+            <p>Не только китайского, но и местного производства!</p>
+          </section>
+        </div>
+
+        <div class="reasons reason-2">
+          <section class="reasons-item">
+            <h2>Там есть Мост дьявола</h2>
+            <p>— №2 —</p>
+            <p>Да, по нему можно пройти! Если, конечно, вы осмелитесь</p>
+            <!--
+            Тут не хватало запятых. Можно исправлять в макете синтаксические ошибки? XD
+            Еще знак номера отделяется от числа неразрывным пробелом.
+            Я могу это сделать по-своему, или нужно четко следовать макету?)
+            -->
+          </section>
+          <figure>
+            <img src="#" alt="Мост дьявола" width="" height="">
+          </figure>
+        </div>
+
+        <div class="other-reasons">
+          <section class="reasons-item">
+            <h2>Небольшая площадь</h2>
+            <p>— № 3 —</p>
+            <p>Все достопримечательности находятся очень близко</p>
+          </section>
+          <section class="reasons-item">
+            <h2>Красивая дорога</h2>
+            <p>— № 4 —</p>
+            <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+          </section>
+          <section class="reasons-item">
+            <h2>Мало туристов</h2>
+            <p>— № 5 —</p>
+            <p>Большинство едет в Гранд Каньон и толпится там</p>
+          </section>
+        </div>
+
+        <section class="hotel-search">
+          <h2>Заинтересовались?</h2>
+          <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+          <a href="#" id="search">Поиск гостиницы в Седоне</a>
+
+          <form class="search-form" action="#" method="post">
+            <label>
+              Дата заезда
+              <!-- В Specification.md написано, что надо добавлять календарик отдельным элементом, так будет правильно? Картинка будет в background -->
+              <input type="date" name="arrival-date">
+                <div class="calendar" id="calendar-arrival"></div>
+              </input>
+            </label>
+            <label>
+              Дата выезда
+              <input type="date" name="departure-date">
+                <div class="calendar" id="calendar-departure"></div>
+              </input>
+            </label>
+            <label>
+              Взрослые:
+              <!-- Или я уже туплю, или правда не знаю, как реализовать такое поле :) -->
+              <input type="text" name="adult">
+            </label>
+            <label>
+              Дети:
+              <!-- Не знаю, как реализовать такое поле -->
+              <input type="text" name="children">
+            </label>
+            <button class="search-btn" type="submit">Найти</button>
+          </form>
+        </section>
+        <section class="map">
+          <img src="#" alt="Карта" width="100%" height="">
+        </section>
+      </main>
+
+      <footer class="main-footer">
+        <section class="footer-hashtag">
+          #visitsedona
+        </section>
+        <section class="footer-social">
+          <a href="#" class="social-btn social-btn-twitter"></a>
+          <a href="#" class="social-btn social-btn-facebook"></a>
+          <a href="#" class="social-btn social-btn-youtube"></a>
+        </section>
+        <section class="footer-copyright">
+          <a href="#"><img src="#" alt="HTML Academy" width="" height=""></a>
+        </section>
+      </footer>
+    </div>
   </body>
 </html>
