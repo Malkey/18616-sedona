@@ -12,10 +12,10 @@
 
         <nav class="main-menu">
           <ul>
-            <li><a href="">Информация</a></li>
-            <li><a href="">Фото и видео</a></li>
-            <li><a href="">Карта штата</a></li>
-            <li><a href="">Гостиницы</a></li>
+            <li><a href="#">Информация</a></li>
+            <li><a href="#">Фото и видео</a></li>
+            <li><a href="#">Карта штата</a></li>
+            <li><a href="#">Гостиницы</a></li>
           </ul>
         </nav>
       </header>
@@ -24,8 +24,7 @@
         <section class="intro">
           <!-- крупное фото - в background -->
 
-          <!-- Полагаю, это всё картинка. Или все-таки текст? -->
-          <img src="#" alt="Welcome to Sedona" width="" height="">
+          <img class="welcome" src="#" alt="Welcome to the gorgeous Sedona. Because the Grand Canyon sucks!" width="" height="">
 
           <!-- Белая маска. Её правильно делать картинкой или нужен блок с background-image ? -->
           <img class="mask" src="#" alt="" width="100%" height="">
@@ -37,117 +36,130 @@
         </div>
 
         <div class="reasons reason-1">
-          <section class="reasons-item">
+          <div class="reasons-item">
+            <!--
+            Я решила все 5 блоков причин сделать с одним классом.
+            Они вроде отличатся только цветом текста и бэкграунда.
+            Цвет потом через родителя стилизовать.
+            Так будет нормально, или лучше сделать разные классы?
+            -->
             <h2>Настоящий городок</h2>
             <p>— №1 —</p>
             <p>Седона — не аттракцион для туристов, там течет своя жизнь</p>
-          </section>
+          </div>
           <figure>
             <img src="#" alt="Седона — настоящий городок" width="" height="">
           </figure>
         </div>
 
         <div class="advices">
-          <section class="advices-item">
+          <div class="advices-item">
             <img src="" alt="Жилье" width="" height="">
             <h2>Жилье</h2>
             <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
-          </section>
-          <section class="advices-item">
+          </div>
+          <div class="advices-item">
             <img src="" alt="Еда" width="" height="">
             <h2>Еда</h2>
             <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
-          </section>
-          <section class="advices-item">
+          </div>
+          <div class="advices-item">
             <img src="" alt="Сувениры" width="" height="">
             <h2>Сувениры</h2>
             <p>Не только китайского, но и местного производства!</p>
-          </section>
+          </div>
         </div>
 
         <div class="reasons reason-2">
-          <section class="reasons-item">
+          <div class="reasons-item">
             <h2>Там есть Мост дьявола</h2>
             <p>— №2 —</p>
             <p>Да, по нему можно пройти! Если, конечно, вы осмелитесь</p>
             <!--
-            Тут не хватало запятых. Можно исправлять в макете синтаксические ошибки? XD
-            Еще знак номера отделяется от числа неразрывным пробелом.
+            Тут не хватало запятых.
+            Можно исправлять в макете синтаксические ошибки? XD
+            Еще знак номера должен отделяться от числа неразрывным пробелом.
             Я могу это сделать по-своему, или нужно четко следовать макету?)
             -->
-          </section>
+          </div>
           <figure>
             <img src="#" alt="Мост дьявола" width="" height="">
           </figure>
         </div>
 
         <div class="other-reasons">
-          <section class="reasons-item">
+          <div class="reasons-item">
             <h2>Небольшая площадь</h2>
             <p>— № 3 —</p>
             <p>Все достопримечательности находятся очень близко</p>
-          </section>
-          <section class="reasons-item">
+          </div>
+          <div class="reasons-item">
             <h2>Красивая дорога</h2>
             <p>— № 4 —</p>
             <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
-          </section>
-          <section class="reasons-item">
+          </div>
+          <div class="reasons-item">
             <h2>Мало туристов</h2>
             <p>— № 5 —</p>
             <p>Большинство едет в Гранд Каньон и толпится там</p>
-          </section>
+          </div>
         </div>
 
-        <section class="hotel-search">
-          <h2>Заинтересовались?</h2>
-          <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-          <a href="#" id="search">Поиск гостиницы в Седоне</a>
+        <section class="hotel-search"> <!-- Тут, я полагаю, section уместен? -->
+          <h3>Заинтересовались?</h3>
+          <!-- Ничего, если стилистически h3 крупнее h2? Или лучше поменять их местами? -->
 
-          <form class="search-form" action="#" method="post">
-            <label>
-              Дата заезда
-              <!-- В Specification.md написано, что надо добавлять календарик отдельным элементом, так будет правильно? Картинка будет в background -->
-              <input type="date" name="arrival-date">
+          <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+
+          <div class="search-block">
+            <a href="#" id="search">Поиск гостиницы в Седоне</a>
+            <form class="search-form" action="#" method="post">
+              <label for="arrival-date-field">Дата заезда:</label>
+              <!--
+              В ТЗ написано, что надо добавлять календарик отдельным элементом, так будет правильно?
+              Картинка будет в background.
+              И уместен ли в данном случае input[type="date"] ?
+              -->
+              <input type="date" name="arrival-date" id="arrival-date-field" value="24 апреля 2016">
                 <div class="calendar" id="calendar-arrival"></div>
               </input>
-            </label>
-            <label>
-              Дата выезда
-              <input type="date" name="departure-date">
+
+              <label for="departure-date-field">Дата выезда:</label>
+              <input type="date" name="departure-date" id="departure-date-field" value="4 июля 2016">
                 <div class="calendar" id="calendar-departure"></div>
               </input>
-            </label>
-            <label>
-              Взрослые:
-              <!-- Или я уже туплю, или правда не знаю, как реализовать такое поле :) -->
-              <input type="text" name="adult">
-            </label>
-            <label>
-              Дети:
-              <!-- Не знаю, как реализовать такое поле -->
-              <input type="text" name="children">
-            </label>
-            <button class="search-btn" type="submit">Найти</button>
-          </form>
+
+              <label for="adult-field">Взрослые:</label>
+              <input type="number" min="0" name="adult" id="adult-field" value="2">
+              <!--
+              Не знаю, как правильнее будет реализовать такие поля.
+              По идее это input[type="number"], но как их потом стилизовать?
+              -->
+
+              <label for="children-field">Дети:</label>
+              <input type="number" min="0" name="children" id="children-field" value="0">
+
+              <button class="search-btn" type="submit">Найти</button>
+            </form>
+          </div>
         </section>
         <section class="map">
-          <img src="#" alt="Карта" width="100%" height="">
+          <!-- <img src="#" alt="Карта" width="100%" height=""> -->
         </section>
       </main>
 
       <footer class="main-footer">
-        <section class="footer-hashtag">
+        <div class="footer-hashtag">
           #visitsedona
-        </section>
-        <section class="footer-social">
+        </div>
+        <div class="footer-social">
           <a href="#" class="social-btn social-btn-twitter"></a>
           <a href="#" class="social-btn social-btn-facebook"></a>
           <a href="#" class="social-btn social-btn-youtube"></a>
-        </section>
-        <section class="footer-copyright">
+        </div>
+        <div class="footer-copyright">
           <a href="#"><img src="#" alt="HTML Academy" width="" height=""></a>
-        </section>
+        </div>
       </footer>
     </div>
   </body>
