@@ -5,147 +5,101 @@
     <title>HTML Academy: Седона</title>
   </head>
   <body>
-    <div class="wrapper"> <!-- обертка-центровщик -->
+    <div class="wrapper">
       <header classs="main-header">
-        <!-- Не знаю, куда будет правильнее поместить ссылку с логотипом -->
-        <a href="/" class="logo"><img src="#" alt="City of Sedona" width="" height=""></a>
-
         <nav class="main-menu">
           <ul>
             <li><a href="#">Информация</a></li>
             <li><a href="#">Фото и видео</a></li>
             <li><a href="#">Карта штата</a></li>
             <li><a href="#">Гостиницы</a></li>
+            <li><a href="/" class="logo"><img src="#" alt="City of Sedona" width="" height=""></a></li>
           </ul>
         </nav>
       </header>
 
-      <main>
-        <section class="intro">
-          <!-- крупное фото - в background -->
-
-          <img class="welcome" src="#" alt="Welcome to the gorgeous Sedona. Because the Grand Canyon sucks!" width="" height="">
-
-          <!-- Белая маска. Её правильно делать картинкой или нужен блок с background-image ? -->
-          <img class="mask" src="#" alt="" width="100%" height="">
-        </section>
+      <main class="main-content">
+        <div class="intro">
+          <img src="#" alt="Welcome to the gorgeous Sedona. Because the Grand Canyon sucks!" width="" height="">
+        </div>
 
         <div class="reasons-intro">
           <h1>Седона — небольшой городок в Аризоне, заслуживающий большего!</h1>
           <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
         </div>
 
-        <div class="reasons reason-1">
-          <div class="reasons-item">
-            <!--
-            Я решила все 5 блоков причин сделать с одним классом.
-            Они вроде отличатся только цветом текста и бэкграунда.
-            Цвет потом через родителя стилизовать.
-            Так будет нормально, или лучше сделать разные классы?
-            -->
+        <div class="reason-row">
+          <div class="reason reason_blue">
             <h2>Настоящий городок</h2>
-            <p>— №1 —</p>
+            <span>— №1 —</span>
             <p>Седона — не аттракцион для туристов, там течет своя жизнь</p>
           </div>
-          <figure>
+          <div class="reason-img">
             <img src="#" alt="Седона — настоящий городок" width="" height="">
-          </figure>
+          </div>
         </div>
 
-        <div class="advices">
-          <div class="advices-item">
-            <img src="" alt="Жилье" width="" height="">
+        <div class="reason-row">
+          <div class="advice advice-house">
             <h2>Жилье</h2>
             <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
           </div>
-          <div class="advices-item">
-            <img src="" alt="Еда" width="" height="">
+          <div class="advice advice-food">
             <h2>Еда</h2>
             <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
           </div>
-          <div class="advices-item">
-            <img src="" alt="Сувениры" width="" height="">
+          <div class="advice advice-souvenir">
             <h2>Сувениры</h2>
             <p>Не только китайского, но и местного производства!</p>
           </div>
         </div>
 
-        <div class="reasons reason-2">
-          <div class="reasons-item">
+        <div class="reason-row">
+          <div class="reason-img">
+            <img src="#" alt="Мост дьявола" width="" height="">
+          </div>
+          <div class="reason reason_blue">
             <h2>Там есть Мост дьявола</h2>
             <p>— №2 —</p>
             <p>Да, по нему можно пройти! Если, конечно, вы осмелитесь</p>
             <!--
-            Тут не хватало запятых.
-            Можно исправлять в макете синтаксические ошибки? XD
-            Еще знак номера должен отделяться от числа неразрывным пробелом.
-            Я могу это сделать по-своему, или нужно четко следовать макету?)
+            Насчет запятых и необходимости пробела между номером и числом вопрос актуален.
+            Если я это поправлю, проверяющий не придерется к несоответствию макету?)
             -->
           </div>
-          <figure>
-            <img src="#" alt="Мост дьявола" width="" height="">
-          </figure>
         </div>
 
-        <div class="other-reasons">
-          <div class="reasons-item">
+        <div class="reason-row">
+          <div class="reason">
             <h2>Небольшая площадь</h2>
-            <p>— № 3 —</p>
+            <span>— №3 —</span>
             <p>Все достопримечательности находятся очень близко</p>
           </div>
-          <div class="reasons-item">
+          <div class="reason">
             <h2>Красивая дорога</h2>
-            <p>— № 4 —</p>
+            <span>— №4 —</span>
             <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
           </div>
-          <div class="reasons-item">
+          <div class="reason">
             <h2>Мало туристов</h2>
-            <p>— № 5 —</p>
+            <span>— №5 —</span>
             <p>Большинство едет в Гранд Каньон и толпится там</p>
           </div>
         </div>
 
-        <section class="hotel-search"> <!-- Тут, я полагаю, section уместен? -->
-          <h3>Заинтересовались?</h3>
-          <!-- Ничего, если стилистически h3 крупнее h2? Или лучше поменять их местами? -->
-
+        <div class="hotel-search">
+          <h3 class="hotel-search-title">Заинтересовались?</h3>
           <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+          <a class="hotel-search-btn" href="#" id="search">Поиск гостиницы в Седоне</a>
+          <!--
+          Решила сделать все-таки ссылкой, хоть в ТЗ она и названа кнопкой.
+          Чтобы при отключенном JS можно было попасть на страницу с формой
+          -->
+        </div>
 
-          <div class="search-block">
-            <a href="#" id="search">Поиск гостиницы в Седоне</a>
-            <form class="search-form" action="#" method="post">
-              <label for="arrival-date-field">Дата заезда:</label>
-              <!--
-              В ТЗ написано, что надо добавлять календарик отдельным элементом, так будет правильно?
-              Картинка будет в background.
-              И уместен ли в данном случае input[type="date"] ?
-              -->
-              <input type="date" name="arrival-date" id="arrival-date-field" value="24 апреля 2016">
-                <div class="calendar" id="calendar-arrival"></div>
-              </input>
-
-              <label for="departure-date-field">Дата выезда:</label>
-              <input type="date" name="departure-date" id="departure-date-field" value="4 июля 2016">
-                <div class="calendar" id="calendar-departure"></div>
-              </input>
-
-              <label for="adult-field">Взрослые:</label>
-              <input type="number" min="0" name="adult" id="adult-field" value="2">
-              <!--
-              Не знаю, как правильнее будет реализовать такие поля.
-              По идее это input[type="number"], но как их потом стилизовать?
-              -->
-
-              <label for="children-field">Дети:</label>
-              <input type="number" min="0" name="children" id="children-field" value="0">
-
-              <button class="search-btn" type="submit">Найти</button>
-            </form>
-          </div>
-        </section>
-        <section class="map">
-          <!-- <img src="#" alt="Карта" width="100%" height=""> -->
-        </section>
+        <div class="map">
+          <img src="#" alt="Карта" width="100%" height="">
+        </div>
       </main>
 
       <footer class="main-footer">
@@ -162,5 +116,32 @@
         </div>
       </footer>
     </div>
+
+    <div class="hotel-search-popup">
+      <form class="search-form" action="#" method="post">
+        <label for="arrival-date-field">Дата заезда:</label>
+        <input type="date" name="arrival-date" id="arrival-date-field" value="24 апреля 2016">
+
+        <label for="departure-date-field">Дата выезда:</label>
+        <input type="date" name="departure-date" id="departure-date-field" value="4 июля 2016">
+
+        <label for="adult-field">Взрослые:</label>
+        <div class="number-field">
+          <button class="plus-bth" type="button"><!-- плюс --></button>
+          <input type="number" min="0" name="adult" id="adult-field" value="2">
+          <button class="minus-bth" type="button"><!-- минус --></button>
+        </div>
+
+        <label for="children-field">Дети:</label>
+        <div class="number-field">
+          <button class="plus-bth" type="button"><!-- плюс --></button>
+          <input type="number" min="0" name="children" id="children-field" value="0">
+          <button class="minus-bth" type="button"><!-- минус --></button>
+        </div>
+
+        <button class="search-btn" type="submit">Найти</button>
+      </form>
+    </div>
+
   </body>
 </html>
