@@ -49,6 +49,10 @@
 
             <div class="hotel-cost">
               <h3>Стоимость в сутки (Р):</h3>
+              <div class="hotel-cost-output">
+                <input type="text" name="hotel-cost-start" value="0">
+                <input type="text" name="hotel-cost-end" value="3000">
+              </div>
               <!-- Тут будет клёвый двойной ползунок -->
             </div>
 
@@ -68,19 +72,20 @@
           <ul class="sorting-type">
             <li>Сортировка:</li>
             <li>
-              <button class="sorting-btn active" type="button">По цене</button>
+              <a class="sorting-btn active" href="#">По цене</a>
+              <!-- Это ссылки! (ссылки на эту же страницу с get-запросом) -->
             </li>
             <li>
-              <button class="sorting-btn" type="button">По типу</button>
+              <a class="sorting-btn" href="#">По типу</a>
             </li>
             <li>
-              <button class="sorting-btn" type="button">По рейтингу</button>
+              <a class="sorting-btn" href="#">По рейтингу</a>
             </li>
           </ul>
 
           <div class="arrows">
-            <button class="arrow-btn" type="button"></a>
-            <button class="arrow-btn active" type="button"></a>
+            <a class="arrow-btn" href="#"></a> <!-- Это ссылки! -->
+            <a class="arrow-btn active" href="#"></a>
           </div>
         </div>
 
