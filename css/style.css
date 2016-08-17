@@ -4,6 +4,7 @@ body {
   color: #000000;
   font-weight: normal;
   font-family: PTSans, Arial, sans-serif;
+  background: url("../grid/sedona-hotels-1200.png") center top no-repeat;
 }
 
 h1 {
@@ -29,4 +30,135 @@ h3 {
   color: #ffffff;
   font-weight: bold;
   font-family: PTSans, Arial, sans-serif;
+}
+
+
+
+/*--------------------------------------------------------------------------------------*/
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.wrapper {
+  min-width: 768px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-menu {
+  min-height: 56px;
+}
+
+.intro {
+  min-height: 432px;
+  text-align: center;
+  padding-top: 76px;
+  margin-bottom: 60px;
+}
+
+.reason-intro {
+  min-height: 102px;
+  margin-bottom: 55px;
+}
+
+.reason-row .reason {
+  min-height: 256px;
+  width: 33%;
+  box-sizing: border-box;
+  float: left;
+}
+
+.reason-row .reason-img {
+  min-height: 256px;
+  width: 67%;
+  box-sizing: border-box;
+  float: left;
+}
+
+.reason-row .advice {
+  min-height: 330px;
+  width: 33%;
+  float: left;
+}
+
+.hotel-search {
+  margin-top: 55px;
+  min-height: 235px;
+}
+
+.map {
+  min-height: 473px;
+}
+
+.main-footer > div {
+  float: left;
+  width: 33%;
+  min-height: 120px;
+}
+
+/*--------------------------------------------------------------------------------------*/
+
+.hotel-search-popup {
+  width: 568px;
+  min-height: 480px;
+}
+
+/*--------------------------------------------------------------------------------------*/
+
+.container {
+  padding: 0 6% 0 6%;
+}
+
+.filter {
+  margin-bottom: 33px;
+}
+
+.filter-form .infrastructure {
+  min-height: 217px;
+  float: left;
+}
+
+.filter-form .hotel-type {
+  min-height: 217px;
+  padding-left: 15px;
+  float: left;
+}
+
+.filter-form .hotel-cost {
+  float: right;
+  min-height: 217px;
+  width: 328px;
+}
+
+.sorting {
+  min-height: 25px;
+  margin-bottom: 29px;
+}
+
+.result .result-item {
+  min-height: 150px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/*======================================
+Для создания сеток
+=======================================*/
+
+body > * {
+  background: rgba(0, 128, 0, 0.2);
+}
+
+body > * > * {
+  background: rgba(255, 45, 82, 0.2);
+}
+
+body > * > * > * {
+  background: rgba(234, 255, 45, 0.2);
+}
+
+body > * > * > * > * {
+  background: rgba(51, 153, 255, 0.2);
 }

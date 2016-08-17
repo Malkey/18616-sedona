@@ -10,6 +10,7 @@
     <div class="wrapper">
       <header class="main-header">
         <nav class="main-menu">
+<!--
           <ul>
             <li><a href="#">Информация</a></li>
             <li><a href="#">Фото и видео</a></li>
@@ -17,13 +18,14 @@
             <li><a href="#" class="active">Гостиницы</a></li>
             <li><a href="/" class="logo"><img src="img/logo.png" alt="City of Sedona" width="138" height="70"></a></li>
           </ul>
+-->
         </nav>
       </header>
 
       <main class="main-content">
-        <div class="filter">
-          <form class="filter-form" action="#" method="post">
-            <div class="infrastructure">
+        <div class="filter">   <!-- Нужен ли тут этот div? -->
+          <form class="filter-form clearfix container" action="#" method="post">
+            <div class="infrastructure"> <!-- Какие у этих блоков сделать ширины? -->
               <h3>Инфраструктура:</h3>
 
               <input type="checkbox" name="pool" id="pool-field" checked>
@@ -56,19 +58,19 @@
                 <input type="text" name="hotel-cost-end" value="3000">
               </div>
               <!-- Тут будет клёвый двойной ползунок -->
-            </div>
 
-            <button class="hotels-btn" type="submit">Показать</button>
-            <!--
-            В Specification.md написано:
-            "Фильтр: верстать с помощью формы, кнопка «Показать» отвечает за отправку формы, при выключенном JavaScript должен осуществляться переход на отдельную страницу."
-            1. Что за отдельная страница?
-            2. Так это кнопка или ссылка должна быть? Как это правильно сделать?
-            -->
+              <button class="hotels-btn" type="submit">Показать</button>
+              <!--
+              В Specification.md написано:
+              "Фильтр: верстать с помощью формы, кнопка «Показать» отвечает за отправку формы, при выключенном JavaScript должен осуществляться переход на отдельную страницу."
+              1. Что за отдельная страница?
+              2. Так это кнопка или ссылка должна быть? Как это правильно сделать?
+              -->
+            </div>
           </form>
         </div>
 
-        <div class="sorting">
+        <div class="sorting container">
           <p>Найдено: 3</p>
 
           <ul class="sorting-type">
@@ -92,7 +94,7 @@
         </div>
 
         <div class="result">
-          <article class="result-item">
+          <article class="result-item container">
             <figure>
               <img src="img/hotel_1.jpg" alt="Amara Resort & Spa" width="135" height="90">
             </figure>
@@ -117,7 +119,7 @@
             </div>
           </article>
 
-          <article class="result-item">
+          <article class="result-item container">
             <figure>
               <img src="img/hotel_2.jpg" alt="Desert Quail Inn" width="135" height="90">
             </figure>
@@ -142,7 +144,7 @@
             </div>
           </article>
 
-          <article class="result-item">
+          <article class="result-item container">
             <figure>
               <img src="img/hotel_3.jpg" alt="Villas at Poco Diablo" width="135" height="90">
             </figure>

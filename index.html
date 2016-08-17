@@ -9,6 +9,7 @@
   <body>
     <div class="wrapper">
       <header class="main-header">
+       <!-- Получилось, что самому header не нужна стилизация, класс можно убрать? -->
         <nav class="main-menu">
           <ul>
             <li><a href="#">Информация</a></li>
@@ -30,18 +31,20 @@
           <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
         </div>
 
-        <div class="reason-row">
+        <div class="reason-row clearfix">
           <div class="reason reason_blue">
             <h2>Настоящий городок</h2>
             <span>— №1 —</span>
             <p>Седона — не аттракцион для туристов, там течет своя жизнь</p>
           </div>
           <div class="reason-img">
-            <img src="img/reason_1.jpg" alt="Седона — настоящий городок" width="800" height="401">
+            <!--<img src="img/reason_1.jpg" alt="Седона — настоящий городок" width="800" height="401">-->
+            <!-- Картинку в background ? -->
           </div>
         </div>
 
-        <div class="reason-row">
+        <div class="reason-row clearfix">
+          <!-- 3 по 33% полностью не закрывают -->
           <div class="advice advice-house">
             <h2>Жилье</h2>
             <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
@@ -56,9 +59,11 @@
           </div>
         </div>
 
-        <div class="reason-row">
+        <div class="reason-row clearfix">
           <div class="reason-img">
-            <img src="img/reason_2.jpg" alt="Мост дьявола" width="800" height="400">
+            <!--<img src="img/reason_2.jpg" alt="Мост дьявола" width="800" height="400">-->
+            <!-- Картинку в background ? -->
+            <!-- Правильно ли менять последовательность этих блоков в html? или как-то в css лучше? -->
           </div>
           <div class="reason reason_blue">
             <h2>Там есть Мост дьявола</h2>
@@ -71,7 +76,7 @@
           </div>
         </div>
 
-        <div class="reason-row">
+        <div class="reason-row clearfix">
           <div class="reason">
             <h2>Небольшая площадь</h2>
             <span>— №3 —</span>
@@ -100,11 +105,12 @@
         </div>
 
         <div class="map">
-          <img src="img/map.jpg" alt="Карта" width="1200" height="593">
+          <!-- <img src="img/map.jpg" alt="Карта" width="1200" height="593">-->
+          <!-- её, наверное, тоже в background? -->
         </div>
       </main>
 
-      <footer class="main-footer">
+      <footer class="main-footer clearfix">
         <div class="footer-hashtag">
           #visitsedona
         </div>
@@ -114,12 +120,13 @@
           <a href="#" class="social-btn social-btn-youtube"></a>
         </div>
         <div class="footer-copyright">
-          Website by<a href="https://htmlacademy.ru/"><img src="img/htmlacademy.png" alt="HTML Academy" width="113" height="39"></a>
+          Website by <a href="https://htmlacademy.ru/"><img src="img/htmlacademy.png" alt="HTML Academy" width="113" height="39"></a>
         </div>
       </footer>
     </div>
 
     <div class="hotel-search-popup">
+      <h3 class="hotel-search-btn">Поиск гостиницы в Седоне</h3>
       <form class="search-form" action="#" method="post">
         <label for="arrival-date-field">Дата заезда:</label>
         <input type="date" name="arrival-date" id="arrival-date-field" value="2016-04-24">
