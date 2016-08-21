@@ -10,15 +10,17 @@
     <div class="wrapper">
       <header class="main-header">
         <nav class="main-menu">
-<!--
-          <ul>
+          <ul class="clearfix">
             <li><a href="#">Информация</a></li>
-            <li><a href="#">Фото и видео</a></li>
+            <li><a href="#">Фото и&nbsp;видео</a></li>
+            <li><a class="active" href="hotels.html">Гостиницы</a></li>
+            <!--
+            Чтобы сделать float:right; пришлось поменять пункты местами.
+            Так делать нормально?
+            -->
             <li><a href="#">Карта штата</a></li>
-            <li><a href="#" class="active">Гостиницы</a></li>
-            <li><a href="/" class="logo"><img src="img/logo.png" alt="City of Sedona" width="138" height="70"></a></li>
+            <li class="logo"><a href="index.html"><img src="img/logo.png" alt="City of Sedona" width="138" height="70"></a></li>
           </ul>
--->
         </nav>
       </header>
 
@@ -59,18 +61,19 @@
               </div>
               <!-- Тут будет клёвый двойной ползунок -->
 
-              <button class="hotels-btn" type="submit">Показать</button>
+              <button class="btn hotels-btn" type="submit">Показать</button>
               <!--
               В Specification.md написано:
               "Фильтр: верстать с помощью формы, кнопка «Показать» отвечает за отправку формы, при выключенном JavaScript должен осуществляться переход на отдельную страницу."
               1. Что за отдельная страница?
               2. Так это кнопка или ссылка должна быть? Как это правильно сделать?
+              http://tanalin.com/blog/2013/03/link-button/
               -->
             </div>
           </form>
         </div>
 
-        <div class="sorting container">
+        <div class="sorting">
           <p>Найдено: 3</p>
 
           <ul class="sorting-type">
@@ -88,100 +91,122 @@
           </ul>
 
           <div class="arrows">
-            <a class="arrow-btn" href="#"></a> <!-- Это ссылки! -->
-            <a class="arrow-btn active" href="#"></a>
+            <a class="icon-up-dir" href="#"></a> <!-- Это ссылки! -->
+            <a class="icon-down-dir active" href="#"></a>
           </div>
         </div>
 
         <div class="result">
-          <article class="result-item container">
+          <article class="result-item container clearfix">
             <figure>
               <img src="img/hotel_1.jpg" alt="Amara Resort & Spa" width="135" height="90">
             </figure>
 
             <div class="result-description">
-              <h2>Amara Resort &amp; Spa</h2>
+              <h2 class="result-title"><a href="#">Amara Resort &amp; Spa</a></h2>
+              <!--
+                В styleguide.psd прописаны разные состояния для заголовка,
+                предполагаю, что это ссылка на страницу с отелем
+              -->
 
               <div class="left-box">
                 <p class="result-status">Гостиница</p>
-                <a class="result-btn result-btn-readmore" href="#">Подробнее</a>
+                <a class="btn btn_blue result-btn" href="#">Подробнее</a>
               </div>
 
               <div class="right-box">
                 <p class="result-price">От 3500 р.</p>
-                <a class="result-btn result-btn-booking" href="#">Забронировать</a>
+                <a class="btn btn_brown result-btn" href="#">Забронировать</a>
               </div>
             </div>
 
             <div class="result-quality">
-              <div class="result-stars"><!-- звезды --></div>
+              <div class="result-stars">
+                <span class="icon-star"></span>
+                <span class="icon-star"></span>
+                <span class="icon-star"></span>
+                <span class="icon-star"></span>
+              </div>
               <div class="result-rating">Рейтинг: 8,5</div>
             </div>
           </article>
 
-          <article class="result-item container">
+          <article class="result-item container clearfix">
             <figure>
               <img src="img/hotel_2.jpg" alt="Desert Quail Inn" width="135" height="90">
             </figure>
 
             <div class="result-description">
-              <h2>Desert Quail Inn</h2>
+              <h2 class="result-title"><a href="#">Desert Quail Inn</a></h2>
 
               <div class="left-box">
                 <p class="result-status">Мотель</p>
-                <a class="result-btn result-btn-readmore" href="#">Подробнее</a>
+                <a class="btn btn_blue result-btn" href="#">Подробнее</a>
               </div>
 
               <div class="right-box">
                 <p class="result-price">От 2000 р.</p>
-                <a class="result-btn result-btn-booking" href="#">Забронировать</a>
+                <a class="btn btn_brown result-btn" href="#">Забронировать</a>
               </div>
             </div>
 
             <div class="result-quality">
-              <div class="result-stars"><!-- звезды --></div>
+              <div class="result-stars">
+                <span class="icon-star"></span>
+                <span class="icon-star"></span>
+              </div>
               <div class="result-rating">Рейтинг: 8,9</div>
             </div>
           </article>
 
-          <article class="result-item container">
+          <article class="result-item container clearfix">
             <figure>
               <img src="img/hotel_3.jpg" alt="Villas at Poco Diablo" width="135" height="90">
             </figure>
 
             <div class="result-description">
-              <h2>Villas at Poco Diablo</h2>
+              <h2 class="result-title"><a href="#">Villas at Poco Diablo</a></h2>
 
               <div class="left-box">
                 <p class="result-status">Апартаменты</p>
-                <a class="result-btn result-btn-readmore" href="#">Подробнее</a>
+                <a class="btn btn_blue result-btn" href="#">Подробнее</a>
               </div>
 
               <div class="right-box">
                 <p class="result-price">От 4000 р.</p>
-                <a class="result-btn result-btn-booking" href="#">Забронировать</a>
+                <a class="btn btn_brown result-btn" href="#">Забронировать</a>
               </div>
             </div>
 
             <div class="result-quality">
-              <div class="result-stars"><!-- звезды --></div>
+              <div class="result-stars">
+                <span class="icon-star"></span>
+                <span class="icon-star"></span>
+                <span class="icon-star"></span>
+              </div>
               <div class="result-rating">Рейтинг: 9,2</div>
             </div>
           </article>
         </div>
       </main>
 
-      <footer class="main-footer">
+      <footer class="main-footer clearfix">
         <div class="footer-hashtag">
           #visitsedona
         </div>
         <div class="footer-social">
-          <a href="#" class="social-btn social-btn-twitter"></a>
-          <a href="#" class="social-btn social-btn-facebook"></a>
-          <a href="#" class="social-btn social-btn-youtube"></a>
+          <a href="#" class="btn btn_blue social-btn">
+            <span class="icon-twitter"></span>
+          </a>
+          <a href="#" class="btn btn_blue social-btn">
+            <span class="icon-facebook"></span>
+          </a>
+          <a href="#" class="btn btn_blue social-btn">
+            <span class="icon-youtube"></span>
+          </a>
         </div>
         <div class="footer-copyright">
-          Website by<a href="https://htmlacademy.ru/"><img src="img/htmlacademy.png" alt="HTML Academy" width="113" height="39"></a>
+          <span>Website by</span><a href="https://htmlacademy.ru/"></a>
         </div>
       </footer>
     </div>

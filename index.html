@@ -9,14 +9,17 @@
   <body>
     <div class="wrapper">
       <header class="main-header">
-       <!-- Получилось, что самому header не нужна стилизация, класс можно убрать? -->
         <nav class="main-menu">
-          <ul>
+          <ul class="clearfix">
             <li><a href="#">Информация</a></li>
-            <li><a href="#">Фото и видео</a></li>
+            <li><a href="#">Фото и&nbsp;видео</a></li>
+            <li><a href="hotels.html">Гостиницы</a></li>
+            <!--
+            Чтобы сделать float:right; пришлось поменять пункты местами.
+            Так делать нормально?
+            -->
             <li><a href="#">Карта штата</a></li>
-            <li><a href="#">Гостиницы</a></li>
-            <li><a href="/" class="logo"><img src="img/logo.png" alt="City of Sedona" width="138" height="70"></a></li>
+            <li class="logo"><a href="index.html"><img src="img/logo.png" alt="City of Sedona" width="138" height="70"></a></li>
           </ul>
         </nav>
       </header>
@@ -27,86 +30,79 @@
         </div>
 
         <div class="reason-intro">
-          <h1>Седона — небольшой городок в Аризоне, заслуживающий большего!</h1>
-          <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+          <h1>Седона&nbsp;&mdash; небольшой городок в&nbsp;Аризоне, заслуживающий большего!</h1>
+          <p>Рассмотрим 5&nbsp;причин, по&nbsp;которым Седона круче, чем гранд каньон!</p>
         </div>
 
         <div class="reason-row clearfix">
           <div class="reason reason_blue">
             <h2>Настоящий городок</h2>
-            <span>— №1 —</span>
-            <p>Седона — не аттракцион для туристов, там течет своя жизнь</p>
+            <span>&mdash;&nbsp;&#8470;&nbsp;1&nbsp;&mdash;</span>
+            <p>Седона&nbsp;&mdash; не&nbsp;аттракцион для туристов, там&nbsp;течет своя жизнь</p>
           </div>
           <div class="reason-img">
-            <!--<img src="img/reason_1.jpg" alt="Седона — настоящий городок" width="800" height="401">-->
-            <!-- Картинку в background ? -->
+            <img src="img/reason_1.jpg" alt="Седона — настоящий городок" width="800" height="401">
           </div>
         </div>
 
         <div class="reason-row clearfix">
-          <!-- 3 по 33% полностью не закрывают -->
           <div class="advice advice-house">
             <h2>Жилье</h2>
-            <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+            <p>Рекомендуем пожить в&nbsp;настоящем мотеле, все как в&nbsp;кино!</p>
           </div>
           <div class="advice advice-food">
             <h2>Еда</h2>
-            <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+            <p>Всегда заказывайте фирменный бургер, вы&nbsp;не&nbsp;разочаруетесь!</p>
           </div>
           <div class="advice advice-souvenir">
             <h2>Сувениры</h2>
-            <p>Не только китайского, но и местного производства!</p>
+            <p>Не&nbsp;только китайского, но&nbsp;и&nbsp;местного производства!</p>
           </div>
         </div>
 
         <div class="reason-row clearfix">
+          <!-- Правильно ли менять последовательность этих блоков в html? или как-то в css лучше? -->
           <div class="reason-img">
-            <!--<img src="img/reason_2.jpg" alt="Мост дьявола" width="800" height="400">-->
-            <!-- Картинку в background ? -->
-            <!-- Правильно ли менять последовательность этих блоков в html? или как-то в css лучше? -->
+            <img src="img/reason_2.jpg" alt="Мост дьявола" width="800" height="400">
           </div>
           <div class="reason reason_blue">
             <h2>Там есть Мост дьявола</h2>
-            <p>— №2 —</p>
-            <p>Да, по нему можно пройти! Если, конечно, вы осмелитесь</p>
-            <!--
-            Насчет запятых и необходимости пробела между номером и числом вопрос актуален.
-            Если я это поправлю, проверяющий не придерется к несоответствию макету?)
-            -->
+            <p>&mdash;&nbsp;&#8470;&nbsp;2&nbsp;&mdash;</p>
+            <p>Да, по&nbsp;нему можно пройти! Если, конечно, вы&nbsp;осмелитесь</p>
           </div>
         </div>
 
         <div class="reason-row clearfix">
           <div class="reason">
             <h2>Небольшая площадь</h2>
-            <span>— №3 —</span>
+            <span>&mdash;&nbsp;&#8470;&nbsp;3&nbsp;&mdash;</span>
             <p>Все достопримечательности находятся очень близко</p>
           </div>
           <div class="reason">
             <h2>Красивая дорога</h2>
-            <span>— №4 —</span>
-            <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+            <span>&mdash;&nbsp;&#8470;&nbsp;4&nbsp;&mdash;</span>
+            <p>Ехать в&nbsp;Седону из&nbsp;Лас-Вегаса совсем не&nbsp;скучно!</p>
           </div>
           <div class="reason">
             <h2>Мало туристов</h2>
-            <span>— №5 —</span>
-            <p>Большинство едет в Гранд Каньон и толпится там</p>
+            <span>&mdash;&nbsp;&#8470;&nbsp;5&nbsp;&mdash;</span>
+            <p>Большинство едет в&nbsp;Гранд Каньон и&nbsp;толпится там</p>
           </div>
         </div>
 
         <div class="hotel-search">
           <p class="hotel-search-lead">Заинтересовались?</p>
-          <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-          <a class="hotel-search-btn" href="#" id="search">Поиск гостиницы в Седоне</a>
+          <p>Укажите предполагаемые даты поездки,<br>и&nbsp;мы&nbsp;покажем вам лучшие предложения гостиниц в&nbsp;Седоне</p>
+          <button class="btn btn_brown hotel-search-btn" href="#" id="search">Поиск гостиницы в Седоне</button>
           <!--
-          Решила сделать все-таки ссылкой, хоть в ТЗ она и названа кнопкой.
-          Чтобы при отключенном JS можно было попасть на страницу с формой
+          Делать button !!!!!
+          А как будет реализован переход на другую страницу, если это будет button?
           -->
         </div>
 
         <div class="map">
-          <!-- <img src="img/map.jpg" alt="Карта" width="1200" height="593">-->
-          <!-- её, наверное, тоже в background? -->
+          <img src="img/map.jpg" alt="Карта" width="1200" height="593">
+          <!-- А как будем вставлять google-карту? -->
         </div>
       </main>
 
@@ -115,44 +111,70 @@
           #visitsedona
         </div>
         <div class="footer-social">
-          <a href="#" class="social-btn social-btn-twitter"></a>
-          <a href="#" class="social-btn social-btn-facebook"></a>
-          <a href="#" class="social-btn social-btn-youtube"></a>
+          <a href="#" class="btn btn_blue social-btn">
+            <span class="icon-twitter"></span>
+          </a>
+          <a href="#" class="btn btn_blue social-btn">
+            <span class="icon-facebook"></span>
+          </a>
+          <a href="#" class="btn btn_blue social-btn">
+            <span class="icon-youtube"></span>
+          </a>
         </div>
         <div class="footer-copyright">
-          Website by <a href="https://htmlacademy.ru/"><img src="img/htmlacademy.png" alt="HTML Academy" width="113" height="39"></a>
+          <span>Website by</span><a href="https://htmlacademy.ru/"></a>
         </div>
       </footer>
     </div>
 
     <div class="hotel-search-popup">
-      <h3 class="hotel-search-btn">Поиск гостиницы в Седоне</h3>
+      <!--<h3>Поиск гостиницы в&nbsp;Седоне</h3>-->
       <form class="search-form" action="#" method="post">
         <label for="arrival-date-field">Дата заезда:</label>
-        <input type="date" name="arrival-date" id="arrival-date-field" value="2016-04-24">
+        <input type="date" name="arrival-date" id="arrival-date-field" placeholder="24 Апреля 2016">
         <!--
         Валидатор ругается, что в value дата должна быть в формате YYYY-MM-DD.
         Как тогда привести в соответствие макету, где дата выводится в виде 24 апреля 2016?
         -->
 
         <label for="departure-date-field">Дата выезда:</label>
-        <input type="date" name="departure-date" id="departure-date-field" value="2016-07-04">
+        <input type="date" name="departure-date" id="departure-date-field" placeholder="4 июля 2016">
 
         <label for="adult-field">Взрослые:</label>
         <div class="number-field">
-          <button class="plus-bth" type="button"><!-- плюс --></button>
-          <input type="number" min="0" name="adult" id="adult-field" value="2">
-          <button class="minus-bth" type="button"><!-- минус --></button>
+          <button class="plus-btn" type="button">
+            <span class="icon-plus"></span>
+          </button>
+          <input type="number" min="0" name="adult" id="adult-field" value="2" placeholder="2">
+          <button class="minus-btn" type="button">
+            <span class="icon-minus"></span>
+          </button>
+
+          <!--
+            Как правильно стилизовать input[type="number"] ?
+            Нашла 2 сложных решения
+            http://jsfiddle.net/BnEmn/1/
+            http://jsfiddle.net/c2rzqcec/13/
+
+            в css использовала решение со stackoverflow, которое не решило проблему
+            http://ru.stackoverflow.com/questions/431590/%D0%A3%D0%B1%D1%80%D0%B0%D1%82%D1%8C-%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BE%D1%87%D0%BA%D0%B8-%D1%81-input-type-number
+
+            Может проще сделать input[type="text"] и задать ему только цифровые значения?
+          -->
         </div>
 
         <label for="children-field">Дети:</label>
         <div class="number-field">
-          <button class="plus-bth" type="button"><!-- плюс --></button>
-          <input type="number" min="0" name="children" id="children-field" value="0">
-          <button class="minus-bth" type="button"><!-- минус --></button>
+          <button class="plus-btn" type="button">
+            <span class="icon-plus"></span>
+          </button>
+          <input type="number" min="0" name="children" id="children-field" value="0" placeholder="0">
+          <button class="minus-btn" type="button">
+            <span class="icon-minus"></span>
+          </button>
         </div>
 
-        <button class="search-btn" type="submit">Найти</button>
+        <button class="btn btn_blue search-btn" type="submit">Найти</button>
       </form>
     </div>
 
