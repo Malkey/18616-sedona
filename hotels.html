@@ -10,16 +10,16 @@
     <div class="wrapper">
       <header class="main-header">
         <nav class="main-menu">
+          <a href="index.html" class="logo"><img src="img/logo.png" alt="City of Sedona" width="138" height="70"></a>
           <ul class="clearfix">
             <li><a href="#">Информация</a></li>
             <li><a href="#">Фото и&nbsp;видео</a></li>
-            <li><a class="active" href="hotels.html">Гостиницы</a></li>
-            <!--
-            Чтобы сделать float:right; пришлось поменять пункты местами.
-            Так делать нормально?
-            -->
+            <li><a class="active">Гостиницы</a></li>
             <li><a href="#">Карта штата</a></li>
-            <li class="logo"><a href="index.html"><img src="img/logo.png" alt="City of Sedona" width="138" height="70"></a></li>
+            <!--
+              Тут будут проблемы с тестом на переполнение контентом, я подозреваю.
+              Появление новых пунктов меню все сломает :(
+            -->
           </ul>
         </nav>
       </header>
@@ -28,7 +28,7 @@
         <div class="filter">   <!-- Нужен ли тут этот div? -->
           <form class="filter-form clearfix container" action="#" method="post">
             <div class="infrastructure"> <!-- Какие у этих блоков сделать ширины? -->
-              <h3>Инфраструктура:</h3>
+              <div class="infrastructure-title">Инфраструктура:</div>
 
               <input type="checkbox" name="pool" id="pool-field" checked>
               <label for="pool-field">Бассейн</label>
@@ -41,7 +41,7 @@
             </div>
 
             <div class="hotel-type">
-              <h3>Тип жилья:</h3>
+              <div class="hotel-type-title">Тип жилья:</div>
 
               <input type="checkbox" name="hotel" id="hotel-field" checked>
               <label for="hotel-field">Гостиница</label>
@@ -54,21 +54,32 @@
             </div>
 
             <div class="hotel-cost">
-              <h3>Стоимость в сутки (Р):</h3>
-              <div class="hotel-cost-output">
-                <input type="text" name="hotel-cost-start" value="0">
-                <input type="text" name="hotel-cost-end" value="3000">
-              </div>
-              <!-- Тут будет клёвый двойной ползунок -->
+              <div class="hotel-cost-title">Стоимость в сутки (Р):</div>
+              <div class="hotel-cost-wrapper">
+                <div class="hotel-cost-output">
+                  <label class="min-price">от <input type="text" name="min-price" value="0"></label>
+                  <label class="max-price">до <input type="text" name="max-price" value="3000"></label>
+                </div>
 
-              <button class="btn hotels-btn" type="submit">Показать</button>
-              <!--
-              В Specification.md написано:
-              "Фильтр: верстать с помощью формы, кнопка «Показать» отвечает за отправку формы, при выключенном JavaScript должен осуществляться переход на отдельную страницу."
-              1. Что за отдельная страница?
-              2. Так это кнопка или ссылка должна быть? Как это правильно сделать?
-              http://tanalin.com/blog/2013/03/link-button/
-              -->
+                <div class="range-controls">
+                  <div class="scale">
+                    <div class="bar"></div>
+                  </div>
+                  <div class="range-toggle range-toggle-min"></div>
+                  <div class="range-toggle range-toggle-max"></div>
+                </div>
+
+                <button class="btn hotels-btn" type="submit">Показать</button>
+                <!--a class="btn hotels-btn" href="#">Показать</a-->
+
+                <!--
+                В Specification.md написано:
+                "Фильтр: верстать с помощью формы, кнопка «Показать» отвечает за отправку формы, при выключенном JavaScript должен осуществляться переход на отдельную страницу."
+                1. Что за отдельная страница?
+                2. Так это кнопка или ссылка должна быть? Как это правильно сделать?
+                    Ведь это же форма, значит нужен submit...
+                -->
+              </div>
             </div>
           </form>
         </div>
@@ -91,8 +102,8 @@
           </ul>
 
           <div class="arrows">
-            <a class="icon-up-dir" href="#"></a> <!-- Это ссылки! -->
-            <a class="icon-down-dir active" href="#"></a>
+            <a href="#"><span class="icon-up-dir"></span></a>
+            <a class="active" href="#"><span class="icon-down-dir"></span></a>
           </div>
         </div>
 

@@ -29,8 +29,8 @@ font-family: "PT Sans";
 [class*=" icon-"]::before {
   display: inline-block;
   width: 1em;
-  margin-right: 0.2em;
-  margin-left: 0.2em;
+/*  margin-right: 0.2em;*/
+/*  margin-left: 0.2em;*/
 
   font-weight: normal;
   line-height: 1em;
@@ -60,36 +60,41 @@ font-family: "PT Sans";
 body {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 14px;
-  font-weight: normal;
   line-height: 21px;
+  font-weight: normal;
   text-transform: uppercase;
   color: #000000;
   background-color: #f2f2f2;
-/*  background: url("../grid/sedona-hotels-1200.png") center top no-repeat;*/
 }
 
 h1 {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 21px;
-  font-weight: bold;
   line-height: 26px;
+  font-weight: bold;
   color: #000000;
 }
 
 h2 {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 21px;
-  font-weight: bold;
   line-height: 21px;
+  font-weight: bold;
   color: #000000;
 }
 
 h3 {
   font-family: PTSans, Arial, sans-serif;
   font-size: 16px;
-  font-weight: bold;
   line-height: 21px;
+  font-weight: bold;
   color: #ffffff;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .btn {
@@ -116,11 +121,7 @@ h3 {
 
 .btn_brown:active {
   background-color: #503e33;
-  color: #857871;
-  /*
-    В макете самому тексту задана непрозрачность 30%
-    Это лучше сделать через rgba? Или можно так оставить?)
-  */
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .btn_blue { background-color: #81b3d2; }
@@ -129,106 +130,51 @@ h3 {
 
 .btn_blue:active {
   background-color: #5496bd;
-  color: #88b6d1;
-  /*
-    Тот же случай, что и в .btn_brown:active
-  */
-}
-
-/*--------------------------------------------------------------------------------------*/
-
-.sprite {
-    display: block;
-    background-image: url(spritesheet.png);
-    background-repeat: no-repeat;
-}
-
-.sprite-advice-food {
-    width: 74px;
-    height: 70px;
-    background-position: -10px -10px;
-}
-
-.sprite-advice-house {
-    width: 75px;
-    height: 72px;
-    background-position: -104px -10px;
-}
-
-.sprite-advice-souvenir {
-    width: 64px;
-    height: 76px;
-    background-position: -199px -10px;
-}
-
-.sprite-htmlacademy {
-    width: 113px;
-    height: 39px;
-    background-position: -283px -10px;
-}
-
-.sprite-htmlacademy_active {
-    width: 113px;
-    height: 39px;
-    background-position: -416px -10px;
-}
-
-.sprite-htmlacademy_hvr {
-    width: 113px;
-    height: 39px;
-    background-position: -549px -10px;
-}
-
-/*--------------------------------------------------------------------------------------*/
-
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .wrapper {
+  position: relative;
   width: 100%;
   max-width: 1200px;
   min-width: 768px;
   margin: 0 auto;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
-  /* Правильно ли я расшифровала тень? */
+/*  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);*/
 }
 
 .main-menu {
-  min-height: 56px;
+  position: relative;
   font-size: 14px;
-  font-weight: bold;
   line-height: 26px;
-  background: #ffffff;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .main-menu ul {
-  position: relative;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .main-menu li {
-  width: 14%;
+  width: 20%;
   padding: 15px 0;
-  list-style: none;
-/*  border: 1px solid red;*/
 }
+
+.main-menu li:first-child { margin-left: 6%; }
+.main-menu li:nth-child(3) { margin-right: 6%; }
 
 .main-menu li:first-child,
 .main-menu li:nth-child(2) {
   float: left;
-  padding-left: 6%;
   text-align: left;
-  /* Так там паддинги задавать? */
 }
 
 .main-menu li:nth-child(3),
 .main-menu li:nth-child(4) {
   float: right;
-  padding-right: 6%;
   text-align: right;
 }
 
@@ -244,7 +190,14 @@ h3 {
   opacity: 0.3;
 }
 
-.main-menu .active { color: #766357; }
+.main-menu .active {
+  color: #766357;
+  cursor: default;
+}
+
+/*
+  зачем прописывать все состояния классу .active, если ссылка становится неактивной?
+*/
 
 .main-menu .active:hover { color: #604e43; }
 
@@ -258,31 +211,27 @@ h3 {
   top: 0;
   left: 50%;
   width: 138px;
-  padding: 0 ;
   margin-left: -69px;
+  padding: 0 ;
   z-index: 1;
 }
 
-.main-menu .logo a:hover,
-.main-menu .logo a:active { opacity: 1; }
+.main-menu .logo:hover,
+.main-menu .logo:active { opacity: 1; }
 
-.main-content { background-color: #ffffff; }
+.main-content {
+  background-color: #ffffff;
+  color: #000000;
+}
 
 .intro {
   position: relative;
-  min-height: 432px;
+  min-height: 432px;  /* тут может фикс высоту? */
   margin-bottom: 59px;
   padding-top: 76px;
   text-align: center;
   background: #aac6db url(../img/back.jpg) no-repeat center -56px;
-  /*
-  Из ТЗ: Крупное фото: фотография занимает 100% ширины, в её нижней части есть белая маска, которая также масштабируется на 100% ширины, но в отличие от фотографии меняет свои пропорции (то есть высота остаётся постоянной, а ширина — 100%).
-
-  Не разобралась, как задать такие размеры, чтобы при этом все нормально отображалось
-
-  В макете -1200 этот блок 513px
-  В макете -768 этот блок 508px
-  */
+/*  background: #aac6db url(../img/back.jpg) no-repeat 100% 20%;*/
 }
 
 .intro:after {
@@ -317,10 +266,18 @@ h3 {
   line-height: 26px;
 }
 
+.reason-row {
+  background-color: #eeeeee;
+}
+
+.reason-row_blue {
+  background-color: #af614f;
+}
+
 .reason {
   float: left;
   box-sizing: border-box;
-  height: 256px;
+  min-height: 256px;
   /*
     В sedona-index-768.psd  прописано, что высота постоянная.
     Значит здесь можно прописать height вместо min-height ???
@@ -333,6 +290,7 @@ h3 {
   text-align: center;
   color: #000000;
   background-color: #eeeeee;
+
 }
 
 .reason h2 {
@@ -343,14 +301,14 @@ h3 {
   color: #000000;
 }
 
-.reason p { margin-top: 21px; }
+.reason p { margin: 21px 0 5px; }
 
 .reason_blue {
   width: 33%;
-  padding: 50px 30px 30px;
+  padding: 53px 30px 25px;
   /* какие тут должны быть паддинги? */
-  color: #ffffff;;
-  background: #81b3d2;
+  color: #ffffff;
+  background-color: #81b3d2;
 }
 
 .reason_blue h2 { color: #ffffff; }
@@ -373,15 +331,15 @@ h3 {
   height: auto;
 }
 
+.advice-row {
+  background-color: #ffffff;
+}
+
 .advice {
   position: relative;
   float: left;
   box-sizing: border-box;
-  height: 330px;
-  /*
-    В sedona-index-768.psd  прописано, что высота постоянная.
-    Значит можно прописать height вместо min-height ???
-  */
+  min-height: 330px;
   width: 33.3333333%;
   padding: 160px 6% 20px;
   /*
@@ -390,11 +348,11 @@ h3 {
   */
   text-align: center;
   color: #000000;
-  background: #ffffff;
+  background-color: #ffffff;
 }
 
 .advice h2 {
-  margin: 0 0 25px 0;
+  margin: 0 0 24px 0;
   color: #000000;
 }
 
@@ -410,7 +368,7 @@ h3 {
   width: 75px;
   height: 72px;
   margin-left: -37px;
-  background-position: -104px -10px;
+  background-position: -105px -10px;
 }
 
 .advice-food:before {
@@ -457,17 +415,184 @@ h3 {
   box-sizing: border-box;
   width: 568px;
   padding: 30px;
-  font-weight: bold;
   font-size: 21px;
   line-height: 26px;
+  font-weight: bold;
   text-align: center;
   color: #ffffff;
   text-transform: uppercase;
 }
 
+/*--------------------------------------------------------------------------------------*/
+
+.hotel-search-popup {
+  /* временное позиционирование */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  z-index: 10;
+
+  display: none;
+  width: 458px;
+  min-height: 285px;
+  padding: 55px;
+  font-size: 0;
+  background-color: #ffffff;
+}
+
+.hotel-search-popup_show {
+  display: block;
+}
+
+.search-form input[type="date"] {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+
+  width: 346px;
+  height: 38px;
+  padding: 10px 40px 10px 15px;
+
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: bold;
+  color: inherit;
+  text-transform: inherit;
+
+  background-color: #f2f2f2;
+  outline: none;
+  border: 2px solid #f2f2f2;
+  color: #000000;  /* Можно ли плейсхолдеру задать черный цвет текста? */
+}
+
+.search-form input[type="date"]:hover {
+  background-color: #ebebeb;
+  border: 2px solid #ebebeb;
+}
+
+.search-form input[type="date"]:focus {
+  background-color: #ffffff;
+  border: 2px solid #e5e5e5;
+}
+
+.search-form label {
+  display: inline-block;
+  vertical-align: middle;
+  width: 101px;
+  margin-right: 11px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 26px;
+  text-align: left;
+}
+
+.search-form .search-row {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.search-form .icon-calendar {
+  position: absolute;
+  top: 6px;
+  right: 9px;
+
+  width: 21px;
+  height: 26px;
+  margin: 0;
+  padding: 0;
+
+  font-size: 21px;
+  line-height: 26px;
+  font-family: "symbols-sedona";
+  color: #c2c2c2;
+  background-color: transparent;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-form .icon-calendar:hover { color: #000000; }
+
+.search-form .icon-calendar:active { color: #81b3d2; }
+
+.search-form .search-btn {
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 21px;
+  line-height: 26px;
+  margin-top: 55px;
+}
+
+.search-numberfield {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  box-sizing: border-box;
+}
+/* надо еще подвигать */
+
+
+.search-numberfield label {
+  vertical-align: middle;
+}
+
+.search-numberfield input[type="number"] {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: bold;
+
+  text-align: center;
+  background-color: #f2f2f2;
+  color: #000000;
+  border: none;
+  outline: none;
+  -moz-appearance: textfield;  /* прячет стрелочки */
+}
+
+.search-numberfield input::-webkit-outer-spin-button,
+.search-numberfield input::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none; /* прячет стрелочки */
+}
+
+.search-numberfield button {
+  display: inline-block;
+  vertical-align: middle;
+  width: 38px;
+  height: 38px;
+  font-size: 14px;
+  line-height: ;: 38px;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #a9a9a9;
+  background-color: #f2f2f2;
+}
+
+.search-numberfield button:hover { color: #000000; }
+.search-numberfield button:active {
+  color: #81b3d2;
+}
+
+/*--------------------------------------------------------------------------------------*/
+
 .map {
   position: relative;
-  height: 473px;  /* тут, думаю, уместна фиксированная высота */
+  height: 593px;  /* тут можно фиксированную высоту! */
   overflow: hidden;
 }
 
@@ -480,22 +605,25 @@ h3 {
 
 .main-footer { background-color: #ffffff; }
 
+.main-footer_mainpage {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
 .main-footer > div {
   float: left;
   box-sizing: border-box;
   width: 33.3333333%;
   min-height: 120px;
-  /*
-    В макете футер с непрозрачностью 90% и заползает на карту.
-    Как мне это сделать?
-  */
 }
 
 .footer-hashtag {
   padding: 45px 20px;
-  font-weight: bold;
   font-size: 21px;
   line-height: 26px;
+  font-weight: bold;
   text-align: center;
 }
 
@@ -513,6 +641,10 @@ h3 {
   font-weight: normal;
   font-size: 19px;
   line-height: 48px;
+}
+
+.footer-social .icon-youtube {
+  font-size: 23px;
 }
 
 .footer-copyright {
@@ -538,120 +670,10 @@ h3 {
 
 /*--------------------------------------------------------------------------------------*/
 
-.hotel-search-popup {
-  /* временное позиционирование */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000000;
-
-  display: none;
-  width: 458px;
-  min-height: 285px;
-/*  min-height: 480px;*/
-  padding: 55px;
-  border: 1px solid black;
-  font-size: 0;
-  background-color: #ffffff;
-}
-
-.search-form input {
-  display: inline-block;
-  vertical-align: middle;
-  box-sizing: border-box;
-
-  width: 346px;
-  height: 38px;
-  margin-bottom: 30px;
-  padding: 10px 15px;
-
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 26px;
-  color: inherit;
-  text-transform: inherit;
-
-  background-color: #f2f2f2;
-  outline: none;
-  border: 2px solid #f2f2f2;
-  color: #000000;  /* Можно ли плейсхолдеру задать черный цвет текста? */
-}
-
-.search-form input:hover {
-  background-color: #ebebeb;
-  border: 2px solid #ebebeb;
-}
-
-.search-form input:focus {
-  background-color: #ffffff;
-  border: 2px solid #e5e5e5;
-}
-
-.search-form label {
-  display: inline-block;
-  vertical-align: middle;
-  width: 101px;
-  margin-right: 11px;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.search-form .search-btn {
-  display: block;
-  width: 100%;
-  padding: 15px 20px;
-  font-size: 21px;
-  line-height: 26px;
-}
-
-.number-field {
-  display: inline-block;
-  vertical-align: middle;
-  margin-bottom: 55px;
-}
-
-.number-field input {
-  width: 38px;
-  height: 38px;
-  padding: 10px 2px;
-  margin: 0;
-  text-align: center;
-  -moz-appearance: textfield;  /* прячет стрелочки */
-}
-
-.number-field input::-webkit-outer-spin-button,
-.number-field input::-webkit-inner-spin-button {
-    margin: 0;
-    -webkit-appearance: none; /* прячет стрелочки */
-}
-
-.number-field button {
-  display: inline-block;
-  vertical-align: top;
-  width: 38px;
-  height: 38px;
-  font-size: 14px;
-  line-height: 38px;
-  text-align: center;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  color: #a9a9a9;
-}
-
-.number-field button:hover { color: #000000; }
-.number-field button:active {
-  color: #81b3d2;
-  /* Кнопка при нажатии прыгает. Это можно так оставить? */
-}
-
-/*--------------------------------------------------------------------------------------*/
-
 .container { padding: 0 6%; }
 
-.filter-form {
+.filter {
+  min-height: 217px;
   background: #aac6db url("../img/inner_back.jpg") no-repeat center -56px;
   /* аналогично главной странице, не совсем понятно, как сделать соответствие ТЗ и макету */
 }
@@ -660,22 +682,25 @@ h3 {
 .filter-form .hotel-type {
   float: left;
   width: 20%;
-  min-height: 187px;
-  margin-top: 27px;
+  margin-top: 26px;
   margin-right: 44px;
   color: #ffffff;
   /*
     Не пойму, какие надо ширины задать этим блокам?
     В sedona-hotels-768.psd нет такого удобного гайда, как в sedona-index-768.psd
+
+    ширина в %
+    margin-left в %
   */
 }
 
-.filter-form .infrastructure h3,
-.filter-form .hotel-type h3 {
+.filter-form .infrastructure-title,
+.filter-form .hotel-type-title {
   margin: 0;
   font-size: 16px;
   line-height: 21px;
-  /* Тут шрифт при наложении сильно отличается */
+  font-weight: bold;
+  color: #ffffff;
 
 }
 
@@ -704,23 +729,140 @@ h3 {
   content: "\2611";
 }
 
-.filter-form .hotel-cost {
+.hotel-cost {
   float: right;
-  width: 328px;
-  min-height: 217px;
+  width: 31%;
+  margin-top: 26px;
+}
+
+/* Переверстать под резину */
+
+.hotel-cost-title {
+  margin-bottom: 11px;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.hotel-cost-wrapper {
+  margin-left: 10px;
+}
+
+.hotel-cost-output {
+  position: relative;
+  height: 32px;
+  margin-bottom: 20px;
+  font-size: 0;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+}
+
+.hotel-cost-output::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 2px;
+  height: 22px;
+
+  background: #ffffff;
+  transform: translate(-50%, -50%);
+}
+
+.hotel-cost-output label {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 29px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.hotel-cost-output .min-price {
+  width: 90px;
+  padding-left: 64px;
+}
+
+.hotel-cost-output .max-price {
+  width: 90px;
+  padding-left: 57px;
+}
+
+.hotel-cost-output input {
+  width: 50px;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.range-controls {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.range-controls .scale {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.range-controls .bar {
+  width: 80%;
+  height: 2px;
+  background: #ffffff;
+}
+
+.range-toggle {
+  position: absolute;
+  top: -9px;
+  width: 4px;
+  height: 4px;
+  background: #ababab;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer;
+}
+
+.range-toggle:hover {
+  background: #1c4f80;
+}
+
+.range-toggle-min {
+  left: 0;
+}
+
+.range-toggle-max {
+  left: 80%;
 }
 
 .hotels-btn {
-  padding: 5px 35px;
+  display: block;
+  margin: 0 auto;
+  padding: 6px 35px;
+  font-size: 14px;
+  line-height: 20px;
   font-weight: normal;
+  color: #ffffff;
   background-color: transparent;
   border: 2px solid #ffffff;
   border-radius: 2px;
 }
 
+.hotels-btn:hover {
+  color: #000000;
+  background: #ffffff;
+}
+
+
+
 .sorting {
   min-height: 25px;
-  padding: 30px 6%;
+  padding: 29px 6% 32px;
 /*  background-color: #ffffff;*/
 }
 
@@ -735,17 +877,22 @@ h3 {
 .sorting-type {
   float: left;
   margin: 0;
-  margin-left: 5px;
+  margin-left: 47px;
+  padding: 0;
+  font-size: 0;
   list-style: none;
 }
 
 .sorting-type li {
   display: inline-block;
   vertical-align: middle;
-  margin: 5px 35px 0 0;
+  margin: 5px 34px 0 0;
+  padding: 0;
   font-size: 12px;
   line-height: 18px;
 }
+
+.sorting-type li:first-child { margin-right: 40px; }
 
 .sorting-btn {
   text-decoration: none;
@@ -767,11 +914,16 @@ h3 {
 
 .arrows {
   float: right;
-  font-size: 23px;
-  line-height: 20px;
+  font-size: 0;
 }
 
+/* Что-то не так с этими стрелочками */
+
 .arrows a {
+  width: 10px;
+  height: 15px;
+  font-size: 23px;
+  line-height: 20px;
   text-decoration: none;
   color: #cccccc;
 }
@@ -796,6 +948,8 @@ h3 {
   border-bottom: 1px solid #e5e5e5;
 }
 
+.result .result-item:last-child { margin-bottom: 0; }
+
 .result figure {
   float: left;
   width: 135px;
@@ -807,9 +961,10 @@ h3 {
 .result-description { float: left; }
 
 .result-title {
-  margin: -6px 0 8px 0;  /* Нормально ли так приподнять h2 ? */
+  margin: 0;
+  margin-bottom: 13px;
   font-size: 21px;
-  line-height: 26px;
+  line-height: 14px;
 }
 
 .result-title a {
@@ -842,32 +997,34 @@ h3 {
 .result-quality {
   position: relative;
   float: right;
-  width: 130px;
+  width: 155px;
   height: 90px;
 }
 
 .result-stars {
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: 0;
+  right: 0;
   font-size: 0;
   text-align: right;
   /* Не пойму, как их правильно спозиционировать */
 }
 
 .result-stars .icon-star {
+  width: 19px;
+  height: 19px;
   font-size: 19px;
-  line-height: 21px;
+  line-height: 19px;
   font-family: "symbols-sedona";
   color: #81b3d2;
-/*  color: red;*/
+  margin-left: 5px;
 }
 
 .result-rating {
   position: absolute;
   bottom: 0;
   right: 0;
-  padding: 3px 15px;
+  padding: 3px 14px;
   font-size: 14px;
   font-weight: 21px;
   color: #666666;
