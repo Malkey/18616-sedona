@@ -55,31 +55,29 @@
 
             <div class="hotel-cost">
               <div class="hotel-cost-title">Стоимость в сутки (Р):</div>
-              <div class="hotel-cost-wrapper">
-                <div class="hotel-cost-output">
-                  <label class="min-price">от <input type="text" name="min-price" value="0"></label>
-                  <label class="max-price">до <input type="text" name="max-price" value="3000"></label>
-                </div>
-
-                <div class="range-controls">
-                  <div class="scale">
-                    <div class="bar"></div>
-                  </div>
-                  <div class="range-toggle range-toggle-min"></div>
-                  <div class="range-toggle range-toggle-max"></div>
-                </div>
-
-                <button class="btn hotels-btn" type="submit">Показать</button>
-                <!--a class="btn hotels-btn" href="#">Показать</a-->
-
-                <!--
-                В Specification.md написано:
-                "Фильтр: верстать с помощью формы, кнопка «Показать» отвечает за отправку формы, при выключенном JavaScript должен осуществляться переход на отдельную страницу."
-                1. Что за отдельная страница?
-                2. Так это кнопка или ссылка должна быть? Как это правильно сделать?
-                    Ведь это же форма, значит нужен submit...
-                -->
+              <div class="hotel-cost-output">
+                <label class="min-price">от <input type="text" name="min-price" value="0"></label>
+                <label class="max-price">до <input type="text" name="max-price" value="3000"></label>
               </div>
+
+              <div class="range-controls">
+                <div class="scale">
+                  <div class="bar"></div>
+                </div>
+                <div class="range-toggle range-toggle-min"></div>
+                <div class="range-toggle range-toggle-max"></div>
+              </div>
+
+              <button class="btn hotels-btn" type="submit">Показать</button>
+              <!--a class="btn hotels-btn" href="#">Показать</a-->
+
+              <!--
+              В Specification.md написано:
+              "Фильтр: верстать с помощью формы, кнопка «Показать» отвечает за отправку формы, при выключенном JavaScript должен осуществляться переход на отдельную страницу."
+              1. Что за отдельная страница?
+              2. Так это кнопка или ссылка должна быть? Как это правильно сделать?
+                  Ведь это же форма, значит нужен submit...
+              -->
             </div>
           </form>
         </div>
@@ -91,7 +89,6 @@
             <li>Сортировка:</li>
             <li>
               <a class="sorting-btn active" href="#">По цене</a>
-              <!-- Это ссылки! (ссылки на эту же страницу с get-запросом) -->
             </li>
             <li>
               <a class="sorting-btn" href="#">По типу</a>
@@ -115,10 +112,6 @@
 
             <div class="result-description">
               <h2 class="result-title"><a href="#">Amara Resort &amp; Spa</a></h2>
-              <!--
-                В styleguide.psd прописаны разные состояния для заголовка,
-                предполагаю, что это ссылка на страницу с отелем
-              -->
 
               <div class="left-box">
                 <p class="result-status">Гостиница</p>

@@ -109,33 +109,34 @@
                 <input type="date" name="departure-date" id="departure-date-field" placeholder="4 июля 2016">
                 <button class="icon-calendar" type="button"></button>
               </div>
+              <div class="clearfix">
+                <div class="search-numberfield search-numberfield_adult">
+                  <label for="adult-field">Взрослые:</label>
+                  <button class="icon-minus" type="button"></button>
+                  <input type="number" min="0" name="adult" id="adult-field" value="2" placeholder="2">
+                  <button class="icon-plus" type="button"></button>
 
-              <div class="search-numberfield">
-                <label for="adult-field">Взрослые:</label>
-                <button class="icon-minus" type="button"></button>
-                <input type="number" min="0" name="adult" id="adult-field" value="2" placeholder="2">
-                <button class="icon-plus" type="button"></button>
+                  <!--
+                    Как правильно стилизовать input[type="number"] ?
+                    Нашла 2 сложных решения
+                    http://jsfiddle.net/BnEmn/1/
+                    http://jsfiddle.net/c2rzqcec/13/
 
-                <!--
-                  Как правильно стилизовать input[type="number"] ?
-                  Нашла 2 сложных решения
-                  http://jsfiddle.net/BnEmn/1/
-                  http://jsfiddle.net/c2rzqcec/13/
+                    в css использовала решение со stackoverflow, которое не решило проблему
+                    http://ru.stackoverflow.com/questions/431590/%D0%A3%D0%B1%D1%80%D0%B0%D1%82%D1%8C-%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BE%D1%87%D0%BA%D0%B8-%D1%81-input-type-number
 
-                  в css использовала решение со stackoverflow, которое не решило проблему
-                  http://ru.stackoverflow.com/questions/431590/%D0%A3%D0%B1%D1%80%D0%B0%D1%82%D1%8C-%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BE%D1%87%D0%BA%D0%B8-%D1%81-input-type-number
+                    Может проще сделать input[type="text"] и задать ему только цифровые значения?
+                  -->
+                </div>
 
-                  Может проще сделать input[type="text"] и задать ему только цифровые значения?
-                -->
-              </div>
+                <div class="search-numberfield search-numberfield_children">
+                  <label for="children-field">Дети:</label>
+                  <!-- Поправить!!! -->
 
-              <div class="search-numberfield">
-                <label for="children-field">Дети:</label>
-                <!-- Поправить!!! -->
-
-                <button class="icon-minus" type="button"></button>
-                <input type="number" min="0" name="children" id="children-field" value="0" placeholder="0">
-                <button class="icon-plus" type="button"></button>
+                  <button class="icon-minus" type="button"></button>
+                  <input type="number" min="0" name="children" id="children-field" value="0" placeholder="0">
+                  <button class="icon-plus" type="button"></button>
+                </div>
               </div>
 
               <button class="btn btn_blue search-btn" type="submit">Найти</button>
@@ -145,7 +146,7 @@
 
         <div class="map">
           <img src="img/map.jpg" alt="Карта" width="1200" height="593">
-          <!-- А как будем вставлять google-карту? -->
+          <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=fGbWylDOpXftZ2WpvFBLnBMZnwtI3xYl&amp;width=100%&amp;height=593&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
         </div>
       </main>
 

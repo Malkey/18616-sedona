@@ -234,7 +234,7 @@ h3 {
 /*  background: #aac6db url(../img/back.jpg) no-repeat 100% 20%;*/
 }
 
-.intro:after {
+.intro::after {
   content: "";
   position: absolute;
   left: 0;
@@ -245,8 +245,8 @@ h3 {
   background-size: 100% 57px;
   /*
   В ТЗ написано, что высота маски остаётся постоянной, а ширина — 100%
-  В макете -1200 маска 57px
-  В макете -768 маска 37px
+  В макете на 1200 маска 57px
+  В макете на 768 маска 37px
   */
 }
 
@@ -278,11 +278,6 @@ h3 {
   float: left;
   box-sizing: border-box;
   min-height: 256px;
-  /*
-    В sedona-index-768.psd  прописано, что высота постоянная.
-    Значит здесь можно прописать height вместо min-height ???
-    То есть тест на переполнение контентом этих блоков проводиться не будет?
-  */
   width: 33.3333333%;
   padding: 46px 40px 30px;
   font-size: 14px;
@@ -306,7 +301,6 @@ h3 {
 .reason_blue {
   width: 33%;
   padding: 53px 30px 25px;
-  /* какие тут должны быть паддинги? */
   color: #ffffff;
   background-color: #81b3d2;
 }
@@ -342,10 +336,6 @@ h3 {
   min-height: 330px;
   width: 33.3333333%;
   padding: 160px 6% 20px;
-  /*
-    Какие тут нужны паддинги, чтобы добиться соответствия макету в обоих состояниях?
-    <br> не подойдут
-  */
   text-align: center;
   color: #000000;
   background-color: #ffffff;
@@ -356,14 +346,14 @@ h3 {
   color: #000000;
 }
 
-.advice:before {
+.advice::before {
   content: "";
   position: absolute;
   left: 50%;
   background-image: url("../img/sprite.png");
 }
 
-.advice-house:before {
+.advice-house::before {
   top: 60px;
   width: 75px;
   height: 72px;
@@ -371,7 +361,7 @@ h3 {
   background-position: -105px -10px;
 }
 
-.advice-food:before {
+.advice-food::before {
   top: 61px;
   width: 74px;
   height: 70px;
@@ -379,7 +369,7 @@ h3 {
   background-position: -10px -10px;
 }
 
-.advice-souvenir:before {
+.advice-souvenir::before {
   top: 56px;
   width: 64px;
   height: 76px;
@@ -410,8 +400,6 @@ h3 {
   position: absolute;
   bottom: 0;
   left: 0;
-/*  left: 50%;*/
-/*  transform: translate(-50%, 0);*/
   box-sizing: border-box;
   width: 568px;
   padding: 30px;
@@ -463,8 +451,12 @@ h3 {
   background-color: #f2f2f2;
   outline: none;
   border: 2px solid #f2f2f2;
-  color: #000000;  /* Можно ли плейсхолдеру задать черный цвет текста? */
+  color: #000000;
 }
+
+/* Почему-то не отрабатывает */
+.search-form input[type="date"]::-webkit-input-placeholder { color: #000000; }
+.search-form input[type="date"]::-moz-placeholder { color: #000000; }
 
 .search-form input[type="date"]:hover {
   background-color: #ebebeb;
@@ -522,24 +514,29 @@ h3 {
 .search-form .search-btn {
   display: block;
   width: 100%;
-  padding: 15px 20px;
+  padding: 15px 20px 17px;
   font-size: 21px;
   line-height: 26px;
-  margin-top: 55px;
+  margin-top: 53px;
 }
 
 .search-numberfield {
   display: inline-block;
   vertical-align: top;
-  width: 50%;
   box-sizing: border-box;
 }
-/* надо еще подвигать */
 
-
-.search-numberfield label {
-  vertical-align: middle;
+.search-numberfield_adult {
+  width: 230px;
+  float: left;
 }
+
+.search-numberfield_children {
+  width: 180px;
+  float: right;
+}
+
+.search-numberfield_children label { width: 54px; }
 
 .search-numberfield input[type="number"] {
   display: inline-block;
@@ -573,8 +570,9 @@ h3 {
   vertical-align: middle;
   width: 38px;
   height: 38px;
+  padding: 0;
   font-size: 14px;
-  line-height: ;: 38px;
+  line-height: 38px;
   text-align: center;
   border: none;
   outline: none;
@@ -584,16 +582,16 @@ h3 {
 }
 
 .search-numberfield button:hover { color: #000000; }
-.search-numberfield button:active {
-  color: #81b3d2;
-}
+
+.search-numberfield button:active { color: #81b3d2; }
 
 /*--------------------------------------------------------------------------------------*/
 
 .map {
   position: relative;
-  height: 593px;  /* тут можно фиксированную высоту! */
+  height: 593px;
   overflow: hidden;
+  /* Вставить интерактивную карту */
 }
 
 .map img {
@@ -675,19 +673,16 @@ h3 {
 .filter {
   min-height: 217px;
   background: #aac6db url("../img/inner_back.jpg") no-repeat center -56px;
-  /* аналогично главной странице, не совсем понятно, как сделать соответствие ТЗ и макету */
 }
 
 .filter-form .infrastructure,
 .filter-form .hotel-type {
   float: left;
-  width: 20%;
-  margin-top: 26px;
-  margin-right: 44px;
+  width: 160px;
+  margin: 26px 9% 0 0;
   color: #ffffff;
   /*
-    Не пойму, какие надо ширины задать этим блокам?
-    В sedona-hotels-768.psd нет такого удобного гайда, как в sedona-index-768.psd
+    Сколько ни старалась, не получается добиться стопроцентного соответствия обоим макетам.
 
     ширина в %
     margin-left в %
@@ -701,7 +696,6 @@ h3 {
   line-height: 21px;
   font-weight: bold;
   color: #ffffff;
-
 }
 
 .filter-form input[type="checkbox"] { display: none; }
@@ -714,7 +708,7 @@ h3 {
   cursor: pointer;
 }
 
-.filter-form input[type="checkbox"] + label:before {
+.filter-form input[type="checkbox"] + label::before {
   content: "\2610";
   position: absolute;
   top: 0;
@@ -725,28 +719,28 @@ h3 {
   font-family: symbols-sedona;
 }
 
-.filter-form input[type="checkbox"]:checked + label:before {
+.filter-form input[type="checkbox"]:checked + label::before {
   content: "\2611";
 }
 
 .hotel-cost {
   float: right;
   width: 31%;
-  margin-top: 26px;
+  margin: 26px 0 0;
+  /*
+    Сколько ни старалась, не получается добиться стопроцентного соответствия обоим макетам.
+  */
 }
 
-/* Переверстать под резину */
-
 .hotel-cost-title {
+  /*
+  В большом макете заголовок смещен влево, а в мелком выровнян вместе с блоком
+  */
   margin-bottom: 11px;
   font-size: 16px;
   line-height: 21px;
   font-weight: bold;
   color: #ffffff;
-}
-
-.hotel-cost-wrapper {
-  margin-left: 10px;
 }
 
 .hotel-cost-output {
@@ -778,16 +772,21 @@ h3 {
   line-height: 29px;
   color: #ffffff;
   cursor: pointer;
+
+
+  /* Вообще трабла */
+  width: 50%;
+  text-align: center;
 }
 
 .hotel-cost-output .min-price {
-  width: 90px;
-  padding-left: 64px;
+/*  width: 90px;*/
+/*  padding-left: 64px;*/
 }
 
 .hotel-cost-output .max-price {
-  width: 90px;
-  padding-left: 57px;
+/*  width: 90px;*/
+/*  padding-left: 57px;*/
 }
 
 .hotel-cost-output input {
@@ -863,7 +862,6 @@ h3 {
 .sorting {
   min-height: 25px;
   padding: 29px 6% 32px;
-/*  background-color: #ffffff;*/
 }
 
 .sorting p {
@@ -1030,25 +1028,3 @@ h3 {
   color: #666666;
   background-color: #f2f2f2;
 }
-
-/*======================================
-Для создания сеток
-=======================================*/
-/*
-
-body > * {
-  background: rgba(0, 128, 0, 0.2);
-}
-
-body > * > * {
-  background: rgba(255, 45, 82, 0.2);
-}
-
-body > * > * > * {
-  background: rgba(234, 255, 45, 0.2);
-}
-
-body > * > * > * > * {
-  background: rgba(51, 153, 255, 0.2);
-}
-*/
