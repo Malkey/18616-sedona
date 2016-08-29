@@ -27,21 +27,22 @@ font-family: "PT Sans";
 
 [class^="icon-"]::before,
 [class*=" icon-"]::before {
-  display: inline-block;
-  width: 1em;
-/*  margin-right: 0.2em;*/
-/*  margin-left: 0.2em;*/
-
+  display: block;
   font-weight: normal;
-  line-height: 1em;
   font-family: "symbols-sedona";
-  text-align: center;
-  text-transform: none;
-  text-decoration: inherit;
   font-style: normal;
   font-variant: normal;
-
+  text-transform: none;
   speak: none;
+
+/*  display: inline-block;*/
+/*  vertical-align: middle;*/
+/*  width: 1em;*/
+/*  margin-right: 0.2em;*/
+/*  margin-left: 0.2em;*/
+/*  line-height: 1em;*/
+/*  text-align: center;*/
+/*  text-decoration: inherit;*/
 }
 
 .icon-facebook::before { content: "\66"; } /* "f" */
@@ -431,16 +432,26 @@ h3 {
 
 .hotel-search-popup_show {
   display: block;
+  animation: appearance 0.4s;
 }
 
-.search-form input[type="date"] {
+@keyframes appearance {
+  0%   {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.search-form input[type="text"] {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
 
   width: 346px;
   height: 38px;
-  padding: 10px 40px 10px 15px;
+  padding: 10px 40px 10px 12px;
 
   font-size: 14px;
   line-height: 26px;
@@ -454,16 +465,22 @@ h3 {
   color: #000000;
 }
 
-/* Почему-то не отрабатывает */
-.search-form input[type="date"]::-webkit-input-placeholder { color: #000000; }
-.search-form input[type="date"]::-moz-placeholder { color: #000000; }
+.search-form input[type="text"]::-webkit-input-placeholder {
+  color: #000000;
+  opacity: 1;
+}
 
-.search-form input[type="date"]:hover {
+.search-form input[type="text"]::-moz-placeholder {
+  color: #000000;
+  opacity: 1;
+}
+
+.search-form input[type="text"]:hover {
   background-color: #ebebeb;
   border: 2px solid #ebebeb;
 }
 
-.search-form input[type="date"]:focus {
+.search-form input[type="text"]:focus {
   background-color: #ffffff;
   border: 2px solid #e5e5e5;
 }
@@ -520,6 +537,22 @@ h3 {
   margin-top: 53px;
 }
 
+.search-form .search-btn_error {
+  animation: shake 0.6s;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-3px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(3px);
+  }
+}
+
 .search-numberfield {
   display: inline-block;
   vertical-align: top;
@@ -529,6 +562,7 @@ h3 {
 .search-numberfield_adult {
   width: 230px;
   float: left;
+  padding: 0;
 }
 
 .search-numberfield_children {
@@ -563,6 +597,17 @@ h3 {
 .search-numberfield input::-webkit-inner-spin-button {
     margin: 0;
     -webkit-appearance: none; /* прячет стрелочки */
+}
+
+.search-numberfield input::-webkit-input-placeholder {
+  color: #000000;
+  opacity: 1;
+}
+
+/* Почему-то не отрабатывает */
+.search-numberfield input::-moz-placeholder {
+  color: #000000;
+  opacity: 1;
 }
 
 .search-numberfield button {
@@ -679,7 +724,7 @@ h3 {
 .filter-form .hotel-type {
   float: left;
   width: 160px;
-  margin: 26px 9% 0 0;
+  margin: 26px 10% 0 0;
   color: #ffffff;
   /*
     Сколько ни старалась, не получается добиться стопроцентного соответствия обоим макетам.
@@ -716,12 +761,13 @@ h3 {
   width: 25px;
   height: 25px;
   font-size: 26px;
-  font-family: symbols-sedona;
+  font-family: "symbols-sedona";
+  color: #ffffff;
 }
 
-.filter-form input[type="checkbox"]:checked + label::before {
-  content: "\2611";
-}
+.filter-form input[type="checkbox"]:checked + label::before { content: "\2611"; }
+
+.filter-form input[type="checkbox"]:disabled + label::before { color: #6a6a6a; }
 
 .hotel-cost {
   float: right;
@@ -775,22 +821,27 @@ h3 {
 
 
   /* Вообще трабла */
+
+  box-sizing: border-box;
   width: 50%;
   text-align: center;
+
 }
 
 .hotel-cost-output .min-price {
+  padding-left: 25px;
 /*  width: 90px;*/
 /*  padding-left: 64px;*/
 }
 
 .hotel-cost-output .max-price {
-/*  width: 90px;*/
+/*  padding-left: 17%;*/
+/*  width: 75px;*/
 /*  padding-left: 57px;*/
 }
 
 .hotel-cost-output input {
-  width: 50px;
+  width: 33px;
   margin: 0;
   color: inherit;
   font: inherit;
@@ -857,8 +908,6 @@ h3 {
   background: #ffffff;
 }
 
-
-
 .sorting {
   min-height: 25px;
   padding: 29px 6% 32px;
@@ -915,11 +964,12 @@ h3 {
   font-size: 0;
 }
 
-/* Что-то не так с этими стрелочками */
-
 .arrows a {
+  display: inline-block;
+  vertical-align: bottom;
   width: 10px;
   height: 15px;
+  margin-left: 13px;
   font-size: 23px;
   line-height: 20px;
   text-decoration: none;
@@ -931,6 +981,9 @@ h3 {
 .arrows a:active,
 .arrows a.active,
 .arrows a.active:hover { color: #81b3d2; }
+
+.arrows span {
+}
 
 .result {
   background-color: #ffffff;
@@ -1005,17 +1058,19 @@ h3 {
   right: 0;
   font-size: 0;
   text-align: right;
-  /* Не пойму, как их правильно спозиционировать */
 }
 
 .result-stars .icon-star {
+  display: inline-block;
+  vertical-align: top;
   width: 19px;
   height: 19px;
+  margin: 0;
+  margin-left: 5px;
   font-size: 19px;
   line-height: 19px;
   font-family: "symbols-sedona";
   color: #81b3d2;
-  margin-left: 5px;
 }
 
 .result-rating {

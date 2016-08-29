@@ -10,7 +10,9 @@
     <div class="wrapper">
       <header class="main-header">
         <nav class="main-menu">
-          <a href="index.html" class="logo"><img src="img/logo.png" alt="City of Sedona" width="138" height="70"></a>
+          <a class="logo">
+            <img src="img/logo.png" alt="City of Sedona" width="138" height="70">
+          </a>
           <ul class="clearfix">
             <li><a href="#">Информация</a></li>
             <li><a href="#">Фото и&nbsp;видео</a></li>
@@ -101,12 +103,12 @@
             <form class="search-form" action="#" method="post">
               <div class="search-row">
                 <label for="arrival-date-field">Дата заезда:</label>
-                <input type="date" name="arrival-date" id="arrival-date-field" placeholder="24 Апреля 2016">
+                <input type="text" name="arrival-date" id="arrival-date-field" placeholder="24 Апреля 2016">
                 <button class="icon-calendar" type="button"></button>
               </div>
               <div class="search-row">
                 <label for="departure-date-field">Дата выезда:</label>
-                <input type="date" name="departure-date" id="departure-date-field" placeholder="4 июля 2016">
+                <input type="text" name="departure-date" id="departure-date-field" placeholder="4 июля 2016">
                 <button class="icon-calendar" type="button"></button>
               </div>
               <div class="clearfix">
@@ -115,18 +117,6 @@
                   <button class="icon-minus" type="button"></button>
                   <input type="number" min="0" name="adult" id="adult-field" value="2" placeholder="2">
                   <button class="icon-plus" type="button"></button>
-
-                  <!--
-                    Как правильно стилизовать input[type="number"] ?
-                    Нашла 2 сложных решения
-                    http://jsfiddle.net/BnEmn/1/
-                    http://jsfiddle.net/c2rzqcec/13/
-
-                    в css использовала решение со stackoverflow, которое не решило проблему
-                    http://ru.stackoverflow.com/questions/431590/%D0%A3%D0%B1%D1%80%D0%B0%D1%82%D1%8C-%D1%81%D1%82%D1%80%D0%B5%D0%BB%D0%BE%D1%87%D0%BA%D0%B8-%D1%81-input-type-number
-
-                    Может проще сделать input[type="text"] и задать ему только цифровые значения?
-                  -->
                 </div>
 
                 <div class="search-numberfield search-numberfield_children">
