@@ -21,11 +21,11 @@ btn.addEventListener("click", function (event) {
 
   if (storage_adult) {
     adult.value = storage_adult;
-  };
+  }
 
   if (storage_children) {
     children.value = storage_children;
-  };
+  }
 });
 
 form.addEventListener("submit", function (event) {

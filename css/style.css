@@ -144,6 +144,8 @@ h3 {
 /*  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);*/
 }
 
+.container { padding: 0 6%; }
+
 .main-menu {
   position: relative;
   font-size: 14px;
@@ -227,7 +229,7 @@ h3 {
 
 .intro {
   position: relative;
-  min-height: 432px;  /* тут может фикс высоту? */
+  min-height: 432px;
   margin-bottom: 59px;
   padding-top: 76px;
   text-align: center;
@@ -244,11 +246,6 @@ h3 {
   height: 57px;
   background-image: url("../img/mask.png");
   background-size: 100% 57px;
-  /*
-  В ТЗ написано, что высота маски остаётся постоянной, а ширина — 100%
-  В макете на 1200 маска 57px
-  В макете на 768 маска 37px
-  */
 }
 
 .reason-intro {
@@ -286,7 +283,6 @@ h3 {
   text-align: center;
   color: #000000;
   background-color: #eeeeee;
-
 }
 
 .reason h2 {
@@ -321,7 +317,8 @@ h3 {
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   width: 100%;
   height: auto;
 }
@@ -415,11 +412,11 @@ h3 {
 /*--------------------------------------------------------------------------------------*/
 
 .hotel-search-popup {
-  /* временное позиционирование */
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, 100%);
+  -webkit-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
   z-index: 10;
 
   display: none;
@@ -432,11 +429,21 @@ h3 {
 
 .hotel-search-popup_show {
   display: block;
-  animation: appearance 0.4s;
+  -webkit-animation: appearance 0.4s;
+          animation: appearance 0.4s;
+}
+
+@-webkit-keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes appearance {
-  0%   {
+  0% {
     opacity: 0;
   }
   100% {
@@ -538,18 +545,37 @@ h3 {
 }
 
 .search-form .search-btn_error {
-  animation: shake 0.6s;
+  -webkit-animation: shake 0.6s;
+          animation: shake 0.6s;
+}
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px);
+  }
 }
 
 @keyframes shake {
   0%, 100% {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   10%, 30%, 50%, 70%, 90% {
-    transform: translateX(-3px);
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
   }
   20%, 40%, 60%, 80% {
-    transform: translateX(3px);
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px);
   }
 }
 
@@ -630,20 +656,18 @@ h3 {
 
 .search-numberfield button:active { color: #81b3d2; }
 
-/*--------------------------------------------------------------------------------------*/
-
 .map {
   position: relative;
   height: 593px;
   overflow: hidden;
-  /* Вставить интерактивную карту */
 }
 
 .map img {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 }
 
 .main-footer { background-color: #ffffff; }
@@ -711,10 +735,6 @@ h3 {
 
 .footer-copyright a:active { background-position: -416px -10px; }
 
-/*--------------------------------------------------------------------------------------*/
-
-.container { padding: 0 6%; }
-
 .filter {
   min-height: 217px;
   background: #aac6db url("../img/inner_back.jpg") no-repeat center -56px;
@@ -780,7 +800,8 @@ h3 {
 
 .hotel-cost-title {
   /*
-  В большом макете заголовок смещен влево, а в мелком выровнян вместе с блоком
+  В большом макете заголовок смещен влево, а в мелком выровнян вместе с блоком.
+  Это косяк или так и надо?
   */
   margin-bottom: 11px;
   font-size: 16px;
@@ -803,12 +824,11 @@ h3 {
   position: absolute;
   top: 50%;
   left: 50%;
-
   width: 2px;
   height: 22px;
-
   background: #ffffff;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .hotel-cost-output label {
@@ -819,13 +839,10 @@ h3 {
   color: #ffffff;
   cursor: pointer;
 
-
   /* Вообще трабла */
-
   box-sizing: border-box;
   width: 50%;
   text-align: center;
-
 }
 
 .hotel-cost-output .min-price {
@@ -923,6 +940,7 @@ h3 {
 
 .sorting-type {
   float: left;
+  max-width: 60%;
   margin: 0;
   margin-left: 47px;
   padding: 0;
@@ -980,9 +998,9 @@ h3 {
 
 .arrows a:active,
 .arrows a.active,
-.arrows a.active:hover { color: #81b3d2; }
-
-.arrows span {
+.arrows a.active:hover {
+  color: #81b3d2;
+  cursor: default;
 }
 
 .result {
@@ -1012,6 +1030,7 @@ h3 {
 .result-description { float: left; }
 
 .result-title {
+  max-width: 340px;
   margin: 0;
   margin-bottom: 13px;
   font-size: 21px;
@@ -1036,6 +1055,7 @@ h3 {
 
 .result-description .left-box,
 .result-description .right-box {
+  max-width: 180px;
   float: left;
   margin-right: 6px;
 }

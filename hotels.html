@@ -27,9 +27,9 @@
       </header>
 
       <main class="main-content">
-        <div class="filter">   <!-- Нужен ли тут этот div? -->
-          <form class="filter-form clearfix container" action="#" method="post">
-            <div class="infrastructure"> <!-- Какие у этих блоков сделать ширины? -->
+        <div class="filter">
+          <form class="filter-form clearfix container" action="#" method="post" action="#">
+            <div class="infrastructure">
               <div class="infrastructure-title">Инфраструктура:</div>
 
               <input type="checkbox" name="pool" id="pool-field" checked>
@@ -71,20 +71,11 @@
               </div>
 
               <button class="btn hotels-btn" type="submit">Показать</button>
-              <!--a class="btn hotels-btn" href="#">Показать</a-->
-
-              <!--
-              В Specification.md написано:
-              "Фильтр: верстать с помощью формы, кнопка «Показать» отвечает за отправку формы, при выключенном JavaScript должен осуществляться переход на отдельную страницу."
-              1. Что за отдельная страница?
-              2. Так это кнопка или ссылка должна быть? Как это правильно сделать?
-                  Ведь это же форма, значит нужен submit...
-              -->
             </div>
           </form>
         </div>
 
-        <div class="sorting">
+        <div class="sorting clearfix">
           <p>Найдено: 3</p>
 
           <ul class="sorting-type">
@@ -101,8 +92,8 @@
           </ul>
 
           <div class="arrows">
-            <a href="#" class="icon-up-dir"></a>
-            <a class="active icon-down-dir" href="#"></a>
+            <a class="icon-up-dir" href="#"></a>
+            <a class="active icon-down-dir"></a>
           </div>
         </div>
 
