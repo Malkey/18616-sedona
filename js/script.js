@@ -54,7 +54,6 @@ function initialize() {
     center: new google.maps.LatLng(34.76, -111.7355)
   }
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
   var myLatLng = new google.maps.LatLng(34.86973, -111.76098);
   var beachMarker = new google.maps.Marker({
     position: myLatLng,

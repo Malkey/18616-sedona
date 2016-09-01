@@ -76,7 +76,7 @@ h2 {
 }
 
 h3 {
-  font-family: PTSans, Arial, sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 16px;
   line-height: 21px;
   font-weight: bold;
@@ -219,7 +219,7 @@ h3 {
   margin-bottom: 59px;
   padding-top: 76px;
   text-align: center;
-  background: #aac6db url(../img/back.jpg) no-repeat center -56px;
+  background: #aac6db url(../img/back.jpg) center -56px no-repeat;
 }
 
 .intro::after {
@@ -229,7 +229,7 @@ h3 {
   bottom: 0;
   width: 100%;
   height: 57px;
-  background-image: url("../img/mask.png");
+  background: url("../img/mask.png") 0 0 no-repeat;
   background-size: 100% 57px;
 }
 
@@ -364,7 +364,6 @@ h3 {
   position: relative;
   width: 568px;
   margin: 56px auto 0;
-  padding-bottom: 119px;
   font-size: 14px;
   line-height: 24px;
   text-align: center;
@@ -380,11 +379,9 @@ h3 {
 }
 
 .hotel-search-btn {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   box-sizing: border-box;
   width: 568px;
+  margin: 33px 0 0 0;
   padding: 30px;
   font-size: 21px;
   line-height: 26px;
@@ -613,7 +610,6 @@ h3 {
   opacity: 1;
 }
 
-/* Почему-то не отрабатывает */
 .search-numberfield input::-moz-placeholder {
   color: #000000;
   opacity: 1;
@@ -640,22 +636,11 @@ h3 {
 .search-numberfield button:active { color: #81b3d2; }
 
 .map {
-/*  position: relative;*/
   width: 100%;
   height: 593px;
   overflow: hidden;
   background: #CBDDA9 url("../img/map.jpg") center 0 no-repeat;
 }
-
-/*
-.map img {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-}
-*/
 
 .main-footer { background-color: #ffffff; }
 
@@ -724,7 +709,7 @@ h3 {
 
 .filter {
   min-height: 217px;
-  background: #aac6db url("../img/inner_back.jpg") no-repeat center -56px;
+  background: #aac6db url("../img/inner_back.jpg") center -56px no-repeat;
 }
 
 .filter-form .infrastructure,
@@ -893,7 +878,7 @@ h3 {
 
 .sorting {
   min-height: 25px;
-  padding: 29px 6% 32px;
+  padding: 30px 6%;
 }
 
 .sorting p {
