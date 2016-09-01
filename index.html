@@ -18,10 +18,6 @@
             <li><a href="#">Фото и&nbsp;видео</a></li>
             <li><a href="hotels.html">Гостиницы</a></li>
             <li><a href="#">Карта штата</a></li>
-            <!--
-              Тут будут проблемы с тестом на переполнение контентом, я подозреваю.
-              Появление новых пунктов меню все сломает :(
-            -->
           </ul>
         </nav>
       </header>
@@ -94,7 +90,7 @@
         <div class="hotel-search">
           <p class="hotel-search-lead">Заинтересовались?</p>
           <p>Укажите предполагаемые даты поездки,<br>и&nbsp;мы&nbsp;покажем вам лучшие предложения гостиниц в&nbsp;Седоне</p>
-          <a class="btn btn_brown hotel-search-btn" id="search" href="#">Поиск гостиницы в Седоне</a>
+          <a class="btn btn_brown hotel-search-btn" id="search" href="#">Поиск гостиницы в&nbsp;Седоне</a>
 
           <div class="hotel-search-popup">
             <form class="search-form" action="#" method="post">
@@ -127,10 +123,8 @@
           </div>
         </div>
 
-        <div class="map">
-          <img src="img/map.jpg" alt="Карта" width="1200" height="593">
-          <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=fGbWylDOpXftZ2WpvFBLnBMZnwtI3xYl&amp;width=100%&amp;height=593&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
-        </div>
+        <div class="map" id="map-canvas"></div>
+
       </main>
 
       <footer class="main-footer main-footer_mainpage clearfix">
@@ -154,7 +148,8 @@
       </footer>
     </div>
 
-    <script src="js/popup_script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script src="js/script.js"></script>
 
   </body>
 </html>

@@ -34,15 +34,6 @@ font-family: "PT Sans";
   font-variant: normal;
   text-transform: none;
   speak: none;
-
-/*  display: inline-block;*/
-/*  vertical-align: middle;*/
-/*  width: 1em;*/
-/*  margin-right: 0.2em;*/
-/*  margin-left: 0.2em;*/
-/*  line-height: 1em;*/
-/*  text-align: center;*/
-/*  text-decoration: inherit;*/
 }
 
 .icon-facebook::before { content: "\66"; } /* "f" */
@@ -141,7 +132,6 @@ h3 {
   min-width: 768px;
   margin: 0 auto;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
-/*  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);*/
 }
 
 .container { padding: 0 6%; }
@@ -198,10 +188,6 @@ h3 {
   cursor: default;
 }
 
-/*
-  зачем прописывать все состояния классу .active, если ссылка становится неактивной?
-*/
-
 .main-menu .active:hover { color: #604e43; }
 
 .main-menu .active:active {
@@ -234,7 +220,6 @@ h3 {
   padding-top: 76px;
   text-align: center;
   background: #aac6db url(../img/back.jpg) no-repeat center -56px;
-/*  background: #aac6db url(../img/back.jpg) no-repeat 100% 20%;*/
 }
 
 .intro::after {
@@ -408,8 +393,6 @@ h3 {
   color: #ffffff;
   text-transform: uppercase;
 }
-
-/*--------------------------------------------------------------------------------------*/
 
 .hotel-search-popup {
   position: absolute;
@@ -616,13 +599,13 @@ h3 {
   color: #000000;
   border: none;
   outline: none;
-  -moz-appearance: textfield;  /* прячет стрелочки */
+  -moz-appearance: textfield;
 }
 
 .search-numberfield input::-webkit-outer-spin-button,
 .search-numberfield input::-webkit-inner-spin-button {
     margin: 0;
-    -webkit-appearance: none; /* прячет стрелочки */
+    -webkit-appearance: none;
 }
 
 .search-numberfield input::-webkit-input-placeholder {
@@ -657,11 +640,14 @@ h3 {
 .search-numberfield button:active { color: #81b3d2; }
 
 .map {
-  position: relative;
+/*  position: relative;*/
+  width: 100%;
   height: 593px;
   overflow: hidden;
+  background: #CBDDA9 url("../img/map.jpg") center 0 no-repeat;
 }
 
+/*
 .map img {
   position: absolute;
   top: 0;
@@ -669,6 +655,7 @@ h3 {
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
 }
+*/
 
 .main-footer { background-color: #ffffff; }
 
@@ -676,7 +663,7 @@ h3 {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .main-footer > div {
@@ -746,12 +733,6 @@ h3 {
   width: 160px;
   margin: 26px 10% 0 0;
   color: #ffffff;
-  /*
-    Сколько ни старалась, не получается добиться стопроцентного соответствия обоим макетам.
-
-    ширина в %
-    margin-left в %
-  */
 }
 
 .filter-form .infrastructure-title,
@@ -789,20 +770,15 @@ h3 {
 
 .filter-form input[type="checkbox"]:disabled + label::before { color: #6a6a6a; }
 
+.filter-form input[type="checkbox"] + label:hover::before { color: #fefefe; }
+
 .hotel-cost {
   float: right;
   width: 31%;
   margin: 26px 0 0;
-  /*
-    Сколько ни старалась, не получается добиться стопроцентного соответствия обоим макетам.
-  */
 }
 
 .hotel-cost-title {
-  /*
-  В большом макете заголовок смещен влево, а в мелком выровнян вместе с блоком.
-  Это косяк или так и надо?
-  */
   margin-bottom: 11px;
   font-size: 16px;
   line-height: 21px;
@@ -838,8 +814,6 @@ h3 {
   line-height: 29px;
   color: #ffffff;
   cursor: pointer;
-
-  /* Вообще трабла */
   box-sizing: border-box;
   width: 50%;
   text-align: center;
@@ -847,14 +821,6 @@ h3 {
 
 .hotel-cost-output .min-price {
   padding-left: 25px;
-/*  width: 90px;*/
-/*  padding-left: 64px;*/
-}
-
-.hotel-cost-output .max-price {
-/*  padding-left: 17%;*/
-/*  width: 75px;*/
-/*  padding-left: 57px;*/
 }
 
 .hotel-cost-output input {

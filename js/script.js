@@ -41,9 +41,24 @@ form.addEventListener("submit", function (event) {
 });
 
 window.addEventListener("keydown", function (event) {
-  if (event.keyCode === 27) { //Esc key
+  if (event.keyCode === 27) {
     if (popup.classList.contains("hotel-search-popup_show")) {
       popup.classList.remove("hotel-search-popup_show");
     }
   }
 });
+
+function initialize() {
+  var mapOptions = {
+    zoom: 9,
+    center: new google.maps.LatLng(34.76, -111.7355)
+  }
+  var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+  var myLatLng = new google.maps.LatLng(34.86973, -111.76098);
+  var beachMarker = new google.maps.Marker({
+    position: myLatLng,
+    map: map
+  });
+}
+google.maps.event.addDomListener(window, "load", initialize);
