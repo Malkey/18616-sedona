@@ -51,6 +51,7 @@ window.addEventListener("keydown", function (event) {
 function initialize() {
   var mapOptions = {
     zoom: 9,
+    scrollwheel: false,
     center: new google.maps.LatLng(34.76, -111.7355)
   }
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
