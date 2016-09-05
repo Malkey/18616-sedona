@@ -753,9 +753,10 @@ h3 {
 
 .filter-form input[type="checkbox"]:checked + label::before { content: "\2611"; }
 
-.filter-form input[type="checkbox"]:disabled + label::before { color: #6a6a6a; }
-
 .filter-form input[type="checkbox"] + label:hover::before { color: #fefefe; }
+
+.filter-form input[type="checkbox"]:disabled + label::before,
+.filter-form input[type="checkbox"]:disabled + label:hover::before { color: #6a6a6a; }
 
 .hotel-cost {
   float: right;
