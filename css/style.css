@@ -60,7 +60,6 @@ body {
 }
 
 h1 {
-  font-family: "PT Sans", Arial, sans-serif;
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
@@ -68,7 +67,6 @@ h1 {
 }
 
 h2 {
-  font-family: "PT Sans", Arial, sans-serif;
   font-size: 21px;
   line-height: 21px;
   font-weight: bold;
@@ -76,7 +74,6 @@ h2 {
 }
 
 h3 {
-  font-family: "PT Sans", Arial, sans-serif;
   font-size: 16px;
   line-height: 21px;
   font-weight: bold;
